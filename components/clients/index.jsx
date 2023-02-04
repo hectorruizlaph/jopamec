@@ -33,7 +33,7 @@ const Clients = () => {
   return (
     <div>
       <div>
-        <h1 className="font-bold text-[32px] pb-[30px] text-center">
+        <h1 className="font-bold text-[32px] pb-[60px] text-center">
           Ellos confían en Placas y Reconocimientos{" "}
           <span className="text-gold">JOPAMEC</span>
         </h1>
@@ -45,7 +45,7 @@ const Clients = () => {
             spaceBetween={0}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             // pagination={{
             //   clickable: true,
@@ -57,7 +57,7 @@ const Clients = () => {
             {clients.map((client) => {
               return (
                 <SwiperSlide key={client}>
-                  <Client path={`images/clients/${client}.svg`} />
+                  <Client path={client} />
                 </SwiperSlide>
               )
             })}
