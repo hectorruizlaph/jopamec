@@ -5,7 +5,7 @@ import TextSlider from "./textSlider"
 
 const Hero = () => {
   return (
-    <div className="flex gap-48 justify-center items-center pb-32">
+    <div className="flex flex-col md:flex-row gap-48 justify-center items-center pb-32">
       <div>
         <div className="pb-8">
           <h1 className="font-manrope font-bold leading-[70px] text-[54px] text-darkBlue">
