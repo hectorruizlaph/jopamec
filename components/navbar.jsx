@@ -23,10 +23,10 @@ function Navbar() {
   }
 
   return (
-    <nav className="dark:bg-gray-900 dark:border-gray-700">
-      <div className="flex md:flex-wrap md:items-center justify-between md:mx-auto">
+    <nav className="fixed md:relative z-50 w-full bg-background">
+      <div className="flex w-full md:flex-wrap md:items-center justify-between md:mx-auto z-50">
         <div>
-          <Link href="/" className="flex items-center py-2">
+          <Link href="/" className="flex items-center py-2 z-50">
             <Image src="/images/logo.svg" width={130} height={50} alt="logo" />
           </Link>
         </div>
@@ -34,7 +34,7 @@ function Navbar() {
           <div className="">
             <button
               type="button"
-              className="absolute right-6 top-4 p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="absolute right-6 top-4 p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-50"
               onClick={handleNavbarClick}
             >
               <svg
@@ -52,45 +52,33 @@ function Navbar() {
               </svg>
             </button>
             {isMenuMovilOpen ? (
-              <div className="md:hidden">
-                <ul className="absolute flex flex-col gap-8 h-[90vh] w-full left-0 top-16 bg-background z-20">
+              <div className="md:hidden overflow-hidden">
+                <ul className="fixed flex flex-col gap-8 h-[90vh] w-full left-0 top-14 bg-background z-20">
                   <li className="pt-8">
                     <Link
                       href="/productos"
-                      className="font-bold py-60 text-left p-6"
+                      className="font-bold  text-left p-6"
                     >
                       Productos
                     </Link>
                   </li>
                   <li className="min-w-[50px]">
-                    <Link
-                      href="/galeria"
-                      className="font-bold py-60 text-left p-6"
-                    >
+                    <Link href="/galeria" className="font-bold  text-left p-6">
                       Galería
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/nosotros"
-                      className="font-bold py-60 text-left p-6"
-                    >
+                    <Link href="/nosotros" className="font-bold  text-left p-6">
                       Nosotros
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/contacto"
-                      className="font-bold py-60 text-left p-6"
-                    >
+                    <Link href="/contacto" className="font-bold  text-left p-6">
                       Contacto
                     </Link>
                   </li>
                   <div>
-                    <Link
-                      href="/cotizar"
-                      className="font-bold py-60 text-left p-6"
-                    >
+                    <Link href="/cotizar" className="font-bold  text-left p-6">
                       <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl">
                         Cotizar
                       </button>

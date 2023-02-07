@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Product = ({img, title, url}) => {
   return (
-    <Link href={`/${url}`}>
+    <Link href={`/productos/${url}`}>
       <div className="flex flex-col justify-between items-center">
         <div className="flex flex-col justify-center items-center h-[380px]">
           <Image
