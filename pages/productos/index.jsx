@@ -51,8 +51,8 @@ const Productos = ({data}) => {
       <div className="flex justify-center items-center h-12 bg-[#141B39]">
         <p className="text-base text-slate-50">
           Entregas urgentes en menos de 24 horas
-          <span className="text-xs">&nbsp;&nbsp;*Aplican restricciones</span>
         </p>
+        <span className="text-xs">&nbsp;&nbsp;*Aplican restricciones</span>
       </div>
       <div className="flex w-full">
         <aside
