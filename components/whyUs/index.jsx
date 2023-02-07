@@ -4,10 +4,10 @@ import WhyUsCard from "./whyUsCard"
 const WhyUs = () => {
   return (
     <div>
-      <h1 className="font-bold text-[32px] pb-[30px] text-center">
+      <h1 className="font-bold text-[24px] md:text-[32px] pb-[40px] md:pb-[30px] text-center leading-8 md:leading-4">
         ¿Por qué elegir <span className="text-gold">Jopamec</span>?
       </h1>
-      <div className="flex justify-center items-center gap-28">
+      <div className="flex flex-col md:flex-row justify-center items-center md:gap-28 gap-12">
         <div>
           <WhyUsCard
             img="rectangle.svg"

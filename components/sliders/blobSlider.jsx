@@ -11,9 +11,9 @@ const BlobSlider = () => {
           <Slider />
         </div>
       </div>
-      <div className="md:hidden">
+      <div className=" flex flex-col justify-center items-center md:hidden max-w-[330px]">
         <Image src="/images/blob.svg" width={280} height={280} alt="blob" />
-        <div className="absolute -mt-[230px] left-0">
+        <div className="absolute">
           <Slider />
         </div>
       </div>

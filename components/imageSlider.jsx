@@ -57,7 +57,7 @@ const Slide = ({slideImage}) => {
           alt="slider1"
         />
       </div>
-      <div className="md:hidden">
+      <div className="flex justify-center items-center md:hidden">
         <Image
           src={`/images/categories/${slideImage}`}
           width={192}
@@ -72,7 +72,7 @@ const Slide = ({slideImage}) => {
 const Slider = () => {
   SwiperCore.use([Autoplay])
   return (
-    <div className="max-w-sm md:max-w-lg">
+    <div className="max-w-[350px] md:max-w-lg">
       <Swiper
         slidesPerView={1}
         loop={true}

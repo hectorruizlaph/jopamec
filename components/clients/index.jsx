@@ -33,13 +33,13 @@ const Clients = () => {
   return (
     <div>
       <div>
-        <h1 className="font-bold text-[32px] pb-[60px] text-center">
+        <h1 className="font-bold text-[24px] md:text-[32px] pb-[60px] text-center leading-8 md:leading-4">
           Ellos confían en Placas y Reconocimientos{" "}
           <span className="text-gold">JOPAMEC</span>
         </h1>
       </div>
       <div>
-        <>
+        <div className="hidden md:block">
           <Swiper
             slidesPerView={5}
             spaceBetween={0}
@@ -62,7 +62,31 @@ const Clients = () => {
               )
             })}
           </Swiper>
-        </>
+        </div>
+        <div className="md:hidden">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={40}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: true,
+            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {clients.map((client) => {
+              return (
+                <SwiperSlide key={client}>
+                  <Client path={client} />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+        </div>
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className="relative p-4 sm:p-6 dark:bg-gray-900 flex flex-col items-center bottom-0 ">
             <div className="md:flex md:justify-between md:gap-40 text-sm lg:max-w-[80%] pt-36">
-                <div className="mb-2 md:mb-0 flex items-center">
+                <div className="md:hidden mb-2 md:mb-0 flex items-center">
                     {/* <Image src="/images/logo.svg" width={300} height={50} alt="logo" /> */}
                     <Image src="/images/icono-jopamec.svg" width={300} height={50} alt="25" />
                 </div>

@@ -6,7 +6,7 @@ import WhyUs from '../components/whyUs'
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12 md:gap-36 font-manrope overflow-x-hidden">
+    <div className="flex flex-col gap-32 md:gap-36 font-manrope overflow-x-hidden">
       <Hero />
       <CategoriesSlider />
       <Clients />

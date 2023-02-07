@@ -18,25 +18,22 @@ const Products = () => {
   return (
     <div>
       <div>
-        <h1 className="font-bold text-[32px] pb-[30px]">
+        <h1 className="font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
           Explora nuestros productos
         </h1>
       </div>
       <div>
-        <>
+        <div className="hidden md:block">
           <Swiper
             slidesPerView={5}
-            spaceBetween={0}
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false,
-            // }}
-            // pagination={{
-            //   clickable: true,
-            // }}
+            spaceBetween={10}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             navigation={true}
-            // modules={[Autoplay, Pagination, Navigation]}
-            modules={[Pagination, Navigation]}
+            modules={[Autoplay, Navigation]}
+            // modules={[Pagination, Navigation]}
             className="mySwiper"
           >
             {products?.map((product) => {
@@ -51,7 +48,33 @@ const Products = () => {
               )
             })}
           </Swiper>
-        </>
+        </div>
+        <div className="md:hidden">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={0}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            navigation={true}
+            modules={[Autoplay, Navigation]}
+            // modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {products?.map((product) => {
+              return (
+                <SwiperSlide key={product?.slug}>
+                  <Client
+                    img={`images/allProducts/${product?.images[0]}`}
+                    title={product?.title}
+                    url={product?.slug}
+                  />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+        </div>
       </div>
     </div>
   )

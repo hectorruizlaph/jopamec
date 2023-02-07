@@ -10,8 +10,8 @@
     font-family: "Manrope", "sans-serif";
     src: url("/fonts/Manrope/Manrope-Regular.ttf") format("ttf");
   }
-  #bluesvg path{
-    fill:blue
+  #bluesvg path {
+    fill: blue;
   }
 
   .no-scrollbar::-webkit-scrollbar {
