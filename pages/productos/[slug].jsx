@@ -1,4 +1,4 @@
-import {data} from "../../data/data2"
+import {data} from "../../data/data"
 
 export const getStaticProps = async ({params}) => {
   const categories = data.categories.filter((p) => p.slug === params.slug)
