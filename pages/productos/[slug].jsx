@@ -1,110 +1,32 @@
 import {data} from "../../data/data"
 
-export const getStaticProps = async ({params}) => {
-  const categories = data.categories.filter((p) => p.slug === params.slug)
-  return {
-    props: {
-      category: data.categories[0],
-    },
-  }
-}
-
 export const getStaticPaths = async () => {
+  const paths = data.products.map((product) => {
+    return {params: {slug: product.slug}}
+  })
   return {
-    paths: data.categories.map((category) => ({
-      params: {
-        slug: category.slug,
-      },
-    })),
+    paths,
     fallback: false,
   }
 }
 
-// import {useRouter} from "next/router"
-// import fsPromises from "fs/promises"
-// import path from "path"
-// `getStaticPaths` requires using `getStaticProps`
-// export async function getStaticProps(context) {
-//   return {
-//     Passed to the page component as props
-//     props: {post: {}},
-//   }
-// }
-const Product = ({category}) => {
-  //   Render post...
-  // }
+export const getStaticProps = async (context) => {
+  const slug = context.params.slug
+  const product = data.products.filter((p) => p.slug === slug)
+  return {
+    props: {product},
+  }
+}
+
+const Product = ({product}) => {
+  const cleanProduct = product[0]
   return (
     <div>
-      <p>{category.id}</p>
-      <p>{category.name}</p>
-      <p>{category.slug}</p>
+      <p className="text-gold pt-32">{cleanProduct.title}</p>
+      {/* <p>{product.name}</p>
+      <p>{product.slug}</p> */}
     </div>
   )
-  // {
-  //   categories.map((category) => (
-  //     <div key={category.id}>
-  //       <h1>{category.name}</h1>
-  //     </div>
-  //   ))
-  // }
-  // const Product = (props) => {
-  //   const router = useRouter()
-  //   const {slug} = router.query
-
-  //   return (
-  //     <>
-  //       {/* <Head>
-  //         <title>{data}</title>
-  //         <meta title="description" content={data} />
-  //       </Head>
-  //       <div dangerouslySetInnerHTML={{__html: htmlString}} /> */}
-
-  //       <h1>{slug}</h1>
-  //       <h1>
-  //         {props.products.categories.map((category) => {
-  //           return (
-  //             <div key={category.id}>
-  //               <p>{category.slug}</p>
-  //             </div>
-  //           )
-  //         })}
-  //       </h1>
-
-  //       {/* <div>
-  //         {props.categories.map((category) => (
-  //           <h2 key={category.id}>{category.slug}</h2>
-  //         ))}
-  //       </div> */}
-  //     </>
-  //   )
-  // }
-
-  // export const getStaticPaths = async () => {
-  //   const paths = products.categories.map((category) => ({
-  //     params: {
-  //       slug: category.slug,
-  //     },
-  //   }))
-  //   console.log("paths: ", paths)
-
-  //   return {
-  //     paths,
-  //     fallback: false,
-  //   }
-  // }
-
-  // export async function getStaticProps() {
-  //   const products = (await import("../../data/data.json")).default
-
-  //   const filePath = path.join(process.cwd(), "/data/data.json")
-  //   const jsonData = await fsPromises.readFile(filePath)
-  //   const objectData = JSON.parse(jsonData)
-  //   console.log(objectData)
-  //   console.log(objectData.categories[0].name)
-
-  //   return {
-  //     props: {products},
-  //   }
 }
 
 export default Product

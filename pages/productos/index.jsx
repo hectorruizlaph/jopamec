@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import {data} from "../../data/data"
 import Product from "../../components/products/product"
+import uuid from "react-uuid"
 
 export const getStaticProps = async () => {
   return {
@@ -10,35 +11,11 @@ export const getStaticProps = async () => {
   }
 }
 
-// const listItem = ({id, slug, name, sub}) => {
-//   return (
-//     <li key={category.id}>
-//       {category.subcategories === false ? (
-//         <a
-//           href="#"
-//           className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-//         >
-//           <span className="flex-1 ml-3 whitespace-nowrap">{category.name}</span>
-//         </a>
-//       ) : (
-//         <div
-//           className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-//           onClick={handleToggleClick(category.id)}
-//         >
-//           <span className="flex-1 ml-3 whitespace-nowrap">{category.name}</span>
-//           <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
-//             +
-//           </span>
-//         </div>
-//       )}
-//     </li>
-//   )
-// }
-
 const Productos = ({data}) => {
   const [productsList, setProductsList] = useState(data?.products)
-  const [categoryList, setCategoryList] = useState(data?.categories)
   const [input, setInput] = useState("")
+
+  const categoryList = data?.categories
 
   const handleInputChange = (e) => {
     e.preventDefault()
@@ -63,7 +40,6 @@ const Productos = ({data}) => {
   }
 
   const handleSubcategoryClick = (subcategoryObj) => {
-    console.log(categoryList)
     categoryList.map((category) =>
       category?.subcategories
         ? category?.subcategories?.map((subcategory) => {
@@ -78,16 +54,6 @@ const Productos = ({data}) => {
       )
     )
   }
-  // const [categories, setCategories] = useState(null)
-  // const [toggle, setToggle] = useState(false)
-
-  // const handleToggleClick = (id) => {
-  //   setToggle(!toggle)
-  // }
-  // useEffect(() => {
-  //   setCategories(data?.categories)
-  // }, [])
-  // console.log(data)
 
   return (
     <div className="pt-16 md:pt-0">
@@ -117,13 +83,13 @@ const Productos = ({data}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
-                class="w-8 h-8 mx-auto my-auto text-gold"
+                className="w-8 h-8 mx-auto my-auto text-gold"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
@@ -132,25 +98,26 @@ const Productos = ({data}) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
-                class="w-8 h-8 mx-auto my-auto text-gold"
+                className="w-8 h-8 mx-auto my-auto text-gold"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
             )}
           </span>
         </div>
+        <h1>Categorias</h1>
         <div className="flex flex-wrap p-2">
           {categoryList.map((category) => {
             return (
               <>
                 <div
-                  key={category.id}
+                  key={uuid()}
                   className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer max-h-7  ${
                     category.active
                       ? "bg-gold text-background"
@@ -160,71 +127,41 @@ const Productos = ({data}) => {
                 >
                   {category.name}
                 </div>
-                {/* <div className="bg-[#e5e5e5] rounded-3xl">
-                  {category?.subcategories && category.active
-                    ? category?.subcategories.map((sub) => (
-                        <div
-                          key={sub.id}
-                          className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer   ${
-                            sub.active
-                              ? "bg-gold text-background"
-                              : "hover:bg-[#efefef] text-gold"
-                          }`}
-                          onClick={() => handleSubcategoryClick(sub)}
-                        >
-                          {sub?.name}
-                        </div>
-                      ))
-                    : null}
-                </div> */}
               </>
             )
           })}
         </div>
         {categoryList.map((category) =>
-          category.active && category.subcategories
-            ? category.subcategories.map((subcategory) => (
-                <div
-                  key={subcategory.id}
-                  className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer   ${
-                    subcategory.active
-                      ? "bg-gold text-background"
-                      : "hover:bg-[#efefef] text-gold"
-                  }`}
-                  onClick={() => handleSubcategoryClick(subcategory)}
-                >
-                  {subcategory?.name}
-                </div>
-              ))
-            : null
+          category.active && category.subcategories ? (
+            <div key={uuid()}>
+              <h1>Subcategorias</h1>
+              <div className="flex flex-wrap">
+                {category.subcategories.map((subcategory) => (
+                  <div
+                    key={uuid()}
+                    className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer   ${
+                      subcategory.active
+                        ? "bg-gold text-background"
+                        : "hover:bg-[#efefef] text-gold"
+                    }`}
+                    onClick={() => handleSubcategoryClick(subcategory)}
+                  >
+                    {subcategory?.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null
         )}
         <>
-          {/* {data?.products?.map((product) => {
-            return (
-              product.title === input && (
-                <div key={product.slug}>
-                  <Product
-                    img={`images/allProducts/${product?.images[0]}`}
-                    title={product?.title}
-                    url={product?.url}
-                  />
-                </div>
-              )
-            )
-          })} */}
-          {/* <>
-            {productsList.map((x) => {
-              return <div key={x}>{x.slug}</div>
-            })}
-          </> */}
           {productsList.map((product) => {
             if (product?.title?.toLowerCase().includes(input) || input === "")
               return (
-                <div key={product.slug}>
+                <div key={uuid()}>
                   <Product
                     img={`images/allProducts/${product?.images[0]}`}
                     title={product?.title}
-                    url={product?.url}
+                    url={product?.slug}
                   />
                 </div>
               )
