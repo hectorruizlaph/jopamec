@@ -87,13 +87,13 @@ const Productos = ({data}) => {
             onChange={handleInputChange}
             value={input}
             placeholder="Busca tu producto..."
-            className="py-2 w-full max-w-[355px] bg-background rounded-lg px-4 shadow-md"
+            className="py-2 w-full bg-background rounded-lg px-4 shadow-md"
           />
           <span
-            className="absolute flex justify-center items-center ml-[315px] mt-[6px] text-darkBlue"
-            onClick={() => setInput("")}
+            className="absolute flex justify-center items-center right-6 mt-[6px] text-darkBlue"
+            // onClick={() => setInput("")}
           >
-            {input ? (
+            {/* {input ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -108,22 +108,22 @@ const Productos = ({data}) => {
                   d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-8 h-8 mx-auto my-auto text-darkBlue"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            )}
+            ) : ( */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-8 h-8 mx-auto my-auto text-darkBlue"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            {/* )} */}
           </span>
         </div>
         <div>

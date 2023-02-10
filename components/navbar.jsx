@@ -54,7 +54,7 @@ function Navbar() {
             {isMenuMovilOpen ? (
               <div className="md:hidden overflow-hidden">
                 <ul className="fixed flex flex-col gap-8 h-full w-full left-0 top-14 bg-background z-20">
-                  <li className="pt-8">
+                  <li className="pt-8 w-full">
                     <Link
                       href="/productos"
                       className="font-bold  text-left p-6 w-full"
