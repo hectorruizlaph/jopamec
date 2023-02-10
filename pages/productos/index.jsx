@@ -22,19 +22,9 @@ const Productos = ({data}) => {
     setInput(e.target.value)
   }
 
-  const displayAllClick = (categoryObj) => {
-    categoryList.map((category) => (category.active = false))
-    categoryList.map((category) =>
-      category?.subcategories
-        ? category?.subcategories?.map((subcategory) => {
-            subcategory.active = false
-          })
-        : null
-    )
-  }
-
   const handleCategoryClick = (categoryObj) => {
     categoryList.map((category) => (category.active = false))
+    setInput("")
     categoryList.map((category) =>
       category?.subcategories
         ? category?.subcategories?.map((subcategory) => {
@@ -90,7 +80,7 @@ const Productos = ({data}) => {
             className="py-2 w-full bg-background rounded-lg px-4 shadow-md"
           />
           <span
-            className="absolute flex justify-center items-center right-6 mt-[6px] text-darkBlue"
+            className="absolute flex justify-center items-center md:right-auto md:ml-[82%] right-6 mt-[6px] text-darkBlue"
             // onClick={() => setInput("")}
           >
             {/* {input ? (

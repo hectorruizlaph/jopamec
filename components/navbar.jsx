@@ -57,7 +57,7 @@ function Navbar() {
                   <li className="pt-8 w-full">
                     <Link
                       href="/productos"
-                      className="font-bold  text-left p-6 w-full"
+                      className="font-bold text-left p-6 w-full"
                       onClick={() => setMenuMovilOpen(false)}
                     >
                       Productos
@@ -67,7 +67,7 @@ function Navbar() {
                     className="w-full"
                     onClick={() => setMenuMovilOpen(false)}
                   >
-                    <Link href="/galeria" className="font-bold  text-left p-6">
+                    <Link href="/galeria" className="font-bold text-left p-6">
                       Galería
                     </Link>
                   </li>
@@ -75,7 +75,7 @@ function Navbar() {
                     className="w-full"
                     onClick={() => setMenuMovilOpen(false)}
                   >
-                    <Link href="/nosotros" className="font-bold  text-left p-6">
+                    <Link href="/nosotros" className="font-bold text-left p-6">
                       Nosotros
                     </Link>
                   </li>
@@ -83,7 +83,7 @@ function Navbar() {
                     className="w-full"
                     onClick={() => setMenuMovilOpen(false)}
                   >
-                    <Link href="/contacto" className="font-bold  text-left p-6">
+                    <Link href="/contacto" className="font-bold text-left p-6">
                       Contacto
                     </Link>
                   </li>
@@ -91,7 +91,7 @@ function Navbar() {
                     className="w-full"
                     onClick={() => setMenuMovilOpen(false)}
                   >
-                    <Link href="/cotizar" className="font-bold  text-left p-6">
+                    <Link href="/cotizar" className="font-bold text-left p-6">
                       <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl">
                         Cotizar
                       </button>
