@@ -58,6 +58,7 @@ function Navbar() {
                     <Link
                       href="/productos"
                       className="font-bold  text-left p-6"
+                      onClick={() => setMenuMovilOpen(false)}
                     >
                       Productos
                     </Link>
