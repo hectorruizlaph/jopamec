@@ -62,22 +62,25 @@ function Navbar() {
                       Productos
                     </Link>
                   </li>
-                  <li className="min-w-[50px]">
+                  <li
+                    className="min-w-[50px]"
+                    onClick={() => setMenuMovilOpen(false)}
+                  >
                     <Link href="/galeria" className="font-bold  text-left p-6">
                       Galería
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setMenuMovilOpen(false)}>
                     <Link href="/nosotros" className="font-bold  text-left p-6">
                       Nosotros
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setMenuMovilOpen(false)}>
                     <Link href="/contacto" className="font-bold  text-left p-6">
                       Contacto
                     </Link>
                   </li>
-                  <div>
+                  <div onClick={() => setMenuMovilOpen(false)}>
                     <Link href="/cotizar" className="font-bold  text-left p-6">
                       <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl">
                         Cotizar

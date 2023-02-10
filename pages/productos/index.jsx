@@ -80,8 +80,8 @@ const Productos = ({data}) => {
           &nbsp;&nbsp;*Aplican restricciones
         </span>
       </div>
-      <div className="flex flex-col gap-5">
-        <div className="flex p-2">
+      <div className="flex flex-col">
+        <div className="flex p-2 mb-2">
           <input
             type="text"
             onChange={handleInputChange}
@@ -127,49 +127,53 @@ const Productos = ({data}) => {
           </span>
         </div>
         <div>
-          <h1>Categorias</h1>
-          <div className="flex py-2 overflow-x-auto scrollbar-none">
-            {categoryList.map((category) => {
-              return (
-                <>
-                  <div
-                    key={uuid()}
-                    className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
-                      category.active
-                        ? "shadow-none"
-                        : "hover:bg-[#efefef] text-darkBlue"
-                    }`}
-                    onClick={() => handleCategoryClick(category)}
-                  >
-                    {category.name}
+          <div>
+            <h1>Categorias</h1>
+            <div className="flex py-2 overflow-x-auto scrollbar-none mb-2">
+              {categoryList.map((category) => {
+                return (
+                  <>
+                    <div
+                      key={uuid()}
+                      className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
+                        category.active
+                          ? "shadow-none"
+                          : "hover:bg-[#efefef] text-darkBlue"
+                      }`}
+                      onClick={() => handleCategoryClick(category)}
+                    >
+                      {category.name}
+                    </div>
+                  </>
+                )
+              })}
+            </div>
+          </div>
+          <div>
+            {categoryList.map((category) =>
+              category.active && category.subcategories ? (
+                <div key={uuid()}>
+                  <h1>Subcategorias</h1>
+                  <div className="flex py-2 overflow-x-auto scrollbar-none">
+                    {category.subcategories.map((subcategory) => (
+                      <div
+                        key={uuid()}
+                        className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
+                          subcategory.active
+                            ? "shadow-none"
+                            : "hover:bg-[#efefef] text-darkBlue"
+                        }`}
+                        onClick={() => handleSubcategoryClick(subcategory)}
+                      >
+                        {subcategory?.name}
+                      </div>
+                    ))}
                   </div>
-                </>
-              )
-            })}
+                </div>
+              ) : null
+            )}
           </div>
         </div>
-        {categoryList.map((category) =>
-          category.active && category.subcategories ? (
-            <div key={uuid()}>
-              <h1>Subcategorias</h1>
-              <div className="flex py-2 overflow-x-auto scrollbar-none">
-                {category.subcategories.map((subcategory) => (
-                  <div
-                    key={uuid()}
-                    className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
-                      subcategory.active
-                        ? "shadow-none"
-                        : "hover:bg-[#efefef] text-darkBlue"
-                    }`}
-                    onClick={() => handleSubcategoryClick(subcategory)}
-                  >
-                    {subcategory?.name}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null
-        )}
         <div className="md:flex md:flex-wrap md:gap-5 md:mt-5">
           {productsList.map((product) => {
             if (product?.title?.toLowerCase().includes(input) || input === "")
