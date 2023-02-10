@@ -72,7 +72,7 @@ const Productos = ({data}) => {
 
   return (
     <div className="pt-16 md:pt-0">
-      <div className="flex justify-center items-center h-12 bg-darkBlue text-background">
+      <div className="flex justify-center items-center h-12 bg-darkBlue text-background mb-2">
         <p className="text-[12px] md:text-base">
           Entregas urgentes en menos de 24 horas
         </p>
@@ -80,14 +80,14 @@ const Productos = ({data}) => {
           &nbsp;&nbsp;*Aplican restricciones
         </span>
       </div>
-      <div className="">
+      <div className="flex flex-col gap-5">
         <div className="flex p-2">
           <input
             type="text"
             onChange={handleInputChange}
             value={input}
             placeholder="Busca tu producto..."
-            className="py-2 w-full max-w-[355px] bg-background rounded-lg px-4 border-2"
+            className="py-2 w-full max-w-[355px] bg-background rounded-lg px-4 shadow-md"
           />
           <span
             className="absolute flex justify-center items-center ml-[315px] mt-[6px] text-darkBlue"
@@ -126,37 +126,39 @@ const Productos = ({data}) => {
             )}
           </span>
         </div>
-        <h1 className="font-semibold text-lg">Categorias</h1>
-        <div className="flex py-2 overflow-x-auto">
-          {categoryList.map((category) => {
-            return (
-              <>
-                <div
-                  key={uuid()}
-                  className={`px-2 m-1 rounded-md my-auto text-sm w-fit cursor-pointer max-h-7 whitespace-nowrap border ${
-                    category.active
-                      ? "bg-darkBlue text-background"
-                      : "hover:bg-[#efefef] text-darkBlue"
-                  }`}
-                  onClick={() => handleCategoryClick(category)}
-                >
-                  {category.name}
-                </div>
-              </>
-            )
-          })}
+        <div>
+          <h1>Categorias</h1>
+          <div className="flex py-2 overflow-x-auto scrollbar-none">
+            {categoryList.map((category) => {
+              return (
+                <>
+                  <div
+                    key={uuid()}
+                    className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
+                      category.active
+                        ? "shadow-none"
+                        : "hover:bg-[#efefef] text-darkBlue"
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category.name}
+                  </div>
+                </>
+              )
+            })}
+          </div>
         </div>
         {categoryList.map((category) =>
           category.active && category.subcategories ? (
             <div key={uuid()}>
-              <h1 className="font-semibold">Subcategorias</h1>
+              <h1>Subcategorias</h1>
               <div className="flex py-2 overflow-x-auto scrollbar-none">
                 {category.subcategories.map((subcategory) => (
                   <div
                     key={uuid()}
-                    className={`px-2 m-1 rounded-md my-auto text-sm w-fit cursor-pointer border max-h-7 whitespace-nowrap ${
+                    className={`px-2 py-1 m-1 rounded-md my-auto text-sm w-fit border-0 cursor-pointer max-h-7 whitespace-nowrap shadow-md ${
                       subcategory.active
-                        ? "bg-darkBlue text-background"
+                        ? "shadow-none"
                         : "hover:bg-[#efefef] text-darkBlue"
                     }`}
                     onClick={() => handleSubcategoryClick(subcategory)}

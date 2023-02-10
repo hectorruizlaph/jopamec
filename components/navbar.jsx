@@ -26,7 +26,7 @@ function Navbar() {
     <nav className="fixed md:relative z-50 w-full bg-background">
       <div className="flex w-full md:flex-wrap md:items-center justify-between md:mx-auto z-50">
         <div>
-          <Link href="/" className="flex items-center py-2 z-50">
+          <Link href="/" className="flex items-center py-2 z-50 px-4">
             <Image src="/images/logo.svg" width={130} height={50} alt="logo" />
           </Link>
         </div>
@@ -53,7 +53,7 @@ function Navbar() {
             </button>
             {isMenuMovilOpen ? (
               <div className="md:hidden overflow-hidden">
-                <ul className="fixed flex flex-col gap-8 h-[90vh] w-full left-0 top-14 bg-background z-20">
+                <ul className="fixed flex flex-col gap-8 h-full w-full left-0 top-14 bg-background z-20">
                   <li className="pt-8">
                     <Link
                       href="/productos"
