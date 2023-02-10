@@ -14,6 +14,13 @@ export const data = {
   ],
   categories: [
     {
+      id: "0",
+      name: "Todos",
+      slug: "todos",
+      subcategories: false,
+      active: false,
+    },
+    {
       id: "1",
       name: "Reconocimientos",
       slug: "reconocimientos",

@@ -34,12 +34,6 @@ const sliderData = [
   {id: "8", name: "Gafetes", slug: "gafetes", img: "gafetes-01.png"},
   {
     id: "9",
-    name: "Señalamientos",
-    slug: "senalamientos",
-    img: "senalamientos-01.png",
-  },
-  {
-    id: "10",
     name: "Porta escritorio",
     slug: "porta-escritorio",
     img: "porta-escritorio-01.png",

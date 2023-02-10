@@ -1,7 +1,8 @@
 import React, {useRef, useState} from "react"
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react"
-import Client from "./product"
+import ProductCard from "./product"
+import Link from "next/link"
 
 // Import Swiper styles
 import "swiper/css"
@@ -17,10 +18,11 @@ const products = data?.products
 const Products = () => {
   return (
     <div>
-      <div>
-        <h1 className="font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
-          Explora nuestros productos
-        </h1>
+      <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
+        <h1 className="">Explora nuestros productos </h1>
+        <Link href="/productos" className="underline md:hover:text-gold">
+          Ver todos
+        </Link>
       </div>
       <div>
         <div className="hidden md:block">
@@ -29,7 +31,7 @@ const Products = () => {
             spaceBetween={10}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             navigation={true}
             modules={[Autoplay, Navigation]}
@@ -39,7 +41,7 @@ const Products = () => {
             {products?.map((product) => {
               return (
                 <SwiperSlide key={product?.slug}>
-                  <Client
+                  <ProductCard
                     img={`images/allProducts/${product?.images[0]}`}
                     title={product?.title}
                     url={product?.slug}
@@ -55,7 +57,7 @@ const Products = () => {
             spaceBetween={0}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             navigation={true}
             modules={[Autoplay, Navigation]}
@@ -65,7 +67,7 @@ const Products = () => {
             {products?.map((product) => {
               return (
                 <SwiperSlide key={product?.slug}>
-                  <Client
+                  <ProductCard
                     img={`images/allProducts/${product?.images[0]}`}
                     title={product?.title}
                     url={product?.slug}

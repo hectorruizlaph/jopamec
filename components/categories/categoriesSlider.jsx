@@ -1,6 +1,7 @@
 import React from "react"
 import HorizontalCrad from "./cards/horizontalCard"
 import VerticalCrad from "./cards/verticalCard"
+import Link from "next/link"
 
 const categories = [
   {
@@ -146,9 +147,12 @@ const categories = [
 const CategoriesSlider = () => {
   return (
     <div>
-      <h1 className="font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
-        Explora nuestras categorias
-      </h1>
+      <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
+        <h1 className="">Explora nuestras categorias </h1>
+        <Link href="/productos" className="underline md:hover:text-gold">
+          Ver todos
+        </Link>
+      </div>
       <div className="relative flex gap-7 overflow-x-auto overflow-y-hidden scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-lightBlue pb-5">
         <div className="flex flex-col gap-7 justify-between">
           {/* {categories.map((card) => {

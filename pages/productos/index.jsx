@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 import {data} from "../../data/data"
-import Product from "../../components/products/product"
+import ProductCard from "../../components/products/product"
 import uuid from "react-uuid"
 
 export const getStaticProps = async () => {
@@ -22,6 +22,17 @@ const Productos = ({data}) => {
     setInput(e.target.value)
   }
 
+  const displayAllClick = (categoryObj) => {
+    categoryList.map((category) => (category.active = false))
+    categoryList.map((category) =>
+      category?.subcategories
+        ? category?.subcategories?.map((subcategory) => {
+            subcategory.active = false
+          })
+        : null
+    )
+  }
+
   const handleCategoryClick = (categoryObj) => {
     categoryList.map((category) => (category.active = false))
     categoryList.map((category) =>
@@ -32,11 +43,15 @@ const Productos = ({data}) => {
         : null
     )
     categoryObj.active = true
-    setProductsList(
-      data?.products.filter(
-        (product) => product.categories_ids[0] === categoryObj.id
+    if (categoryObj.id == "0") {
+      setProductsList(data?.products)
+    } else {
+      setProductsList(
+        data?.products.filter(
+          (product) => product.categories_ids[0] === categoryObj.id
+        )
       )
-    )
+    }
   }
 
   const handleSubcategoryClick = (subcategoryObj) => {
@@ -57,7 +72,7 @@ const Productos = ({data}) => {
 
   return (
     <div className="pt-16 md:pt-0">
-      <div className="flex justify-center items-center h-12 bg-gold text-background">
+      <div className="flex justify-center items-center h-12 bg-darkBlue text-background">
         <p className="text-[12px] md:text-base">
           Entregas urgentes en menos de 24 horas
         </p>
@@ -71,11 +86,11 @@ const Productos = ({data}) => {
             type="text"
             onChange={handleInputChange}
             value={input}
-            placeholder="producto"
-            className="py-2 w-full max-w-[355px] bg-background rounded-3xl px-4"
+            placeholder="Busca tu producto..."
+            className="py-2 w-full max-w-[355px] bg-background rounded-lg px-4 border-2"
           />
           <span
-            className="absolute flex justify-center items-center ml-[315px] mt-[4px]"
+            className="absolute flex justify-center items-center ml-[315px] mt-[6px] text-darkBlue"
             onClick={() => setInput("")}
           >
             {input ? (
@@ -85,7 +100,7 @@ const Productos = ({data}) => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-8 h-8 mx-auto my-auto text-gold"
+                className="w-8 h-8 mx-auto my-auto text-darkBlue cursor-pointer"
               >
                 <path
                   strokeLinecap="round"
@@ -100,7 +115,7 @@ const Productos = ({data}) => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-8 h-8 mx-auto my-auto text-gold"
+                className="w-8 h-8 mx-auto my-auto text-darkBlue"
               >
                 <path
                   strokeLinecap="round"
@@ -111,17 +126,17 @@ const Productos = ({data}) => {
             )}
           </span>
         </div>
-        <h1>Categorias</h1>
+        <h1 className="font-bold text-lg">Categorias</h1>
         <div className="flex flex-wrap p-2">
           {categoryList.map((category) => {
             return (
               <>
                 <div
                   key={uuid()}
-                  className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer max-h-7  ${
+                  className={`p-1 px-2 m-1 rounded-lg border-0 text-sm w-fit cursor-pointer max-h-7 font-semibold  ${
                     category.active
-                      ? "bg-gold text-background"
-                      : "hover:bg-[#efefef] text-gold"
+                      ? "bg-darkBlue text-background"
+                      : "hover:bg-[#efefef] text-darkBlue border-2"
                   }`}
                   onClick={() => handleCategoryClick(category)}
                 >
@@ -134,15 +149,15 @@ const Productos = ({data}) => {
         {categoryList.map((category) =>
           category.active && category.subcategories ? (
             <div key={uuid()}>
-              <h1>Subcategorias</h1>
+              <h1 className="font-bold">Subcategorias</h1>
               <div className="flex flex-wrap">
                 {category.subcategories.map((subcategory) => (
                   <div
                     key={uuid()}
-                    className={`p-1 px-2 m-1 rounded-3xl border-2 text-xs w-fit cursor-pointer   ${
+                    className={`p-1 px-2 m-1 rounded-lg text-sm w-fit cursor-pointer font-semibold  ${
                       subcategory.active
-                        ? "bg-gold text-background"
-                        : "hover:bg-[#efefef] text-gold"
+                        ? "bg-darkBlue text-background font-bold"
+                        : "hover:bg-[#efefef] text-darkBlue"
                     }`}
                     onClick={() => handleSubcategoryClick(subcategory)}
                   >
@@ -153,12 +168,12 @@ const Productos = ({data}) => {
             </div>
           ) : null
         )}
-        <>
+        <div className="md:flex md:flex-wrap md:gap-5 md:mt-5">
           {productsList.map((product) => {
             if (product?.title?.toLowerCase().includes(input) || input === "")
               return (
                 <div key={uuid()}>
-                  <Product
+                  <ProductCard
                     img={`images/allProducts/${product?.images[0]}`}
                     title={product?.title}
                     url={product?.slug}
@@ -166,7 +181,7 @@ const Productos = ({data}) => {
                 </div>
               )
           })}
-        </>
+        </div>
       </div>
     </div>
   )

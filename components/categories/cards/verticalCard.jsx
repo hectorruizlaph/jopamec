@@ -15,7 +15,7 @@ const VerticalCrad = ({image, name, articles, link}) => {
             className="absolute object-cover w-[180px] h-[300px] md:w-[] opacity-[0.6] mt-6 ease-in-out duration-500 group-hover:opacity-[1]"
           />
         </div>
-        <div className="flex flex-col items-end text-background font-bold text-xl md:w-[180px] md:pr-5">
+        <div className="flex flex-col items-end text-background font-bold text-xl md:w-[180px] md:pr-2">
           <p className="flex font-bold text-xl md:w-[180px] justify-end text-end pr-3">
             {name}
           </p>
