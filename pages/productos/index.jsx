@@ -126,17 +126,17 @@ const Productos = ({data}) => {
             )}
           </span>
         </div>
-        <h1 className="font-bold text-lg">Categorias</h1>
-        <div className="flex flex-wrap p-2">
+        <h1 className="font-semibold text-lg">Categorias</h1>
+        <div className="flex py-2 overflow-x-auto">
           {categoryList.map((category) => {
             return (
               <>
                 <div
                   key={uuid()}
-                  className={`p-1 px-2 m-1 rounded-lg border-0 text-sm w-fit cursor-pointer max-h-7 font-semibold  ${
+                  className={`px-2 m-1 rounded-md my-auto text-sm w-fit cursor-pointer max-h-7 whitespace-nowrap border ${
                     category.active
                       ? "bg-darkBlue text-background"
-                      : "hover:bg-[#efefef] text-darkBlue border-2"
+                      : "hover:bg-[#efefef] text-darkBlue"
                   }`}
                   onClick={() => handleCategoryClick(category)}
                 >
@@ -149,14 +149,14 @@ const Productos = ({data}) => {
         {categoryList.map((category) =>
           category.active && category.subcategories ? (
             <div key={uuid()}>
-              <h1 className="font-bold">Subcategorias</h1>
-              <div className="flex flex-wrap">
+              <h1 className="font-semibold">Subcategorias</h1>
+              <div className="flex py-2 overflow-x-auto scrollbar-none">
                 {category.subcategories.map((subcategory) => (
                   <div
                     key={uuid()}
-                    className={`p-1 px-2 m-1 rounded-lg text-sm w-fit cursor-pointer font-semibold  ${
+                    className={`px-2 m-1 rounded-md my-auto text-sm w-fit cursor-pointer border max-h-7 whitespace-nowrap ${
                       subcategory.active
-                        ? "bg-darkBlue text-background font-bold"
+                        ? "bg-darkBlue text-background"
                         : "hover:bg-[#efefef] text-darkBlue"
                     }`}
                     onClick={() => handleSubcategoryClick(subcategory)}

@@ -15,8 +15,8 @@ export const data = {
   categories: [
     {
       id: "0",
-      name: "Todos",
-      slug: "todos",
+      name: "Todas",
+      slug: "todas",
       subcategories: false,
       active: false,
     },
