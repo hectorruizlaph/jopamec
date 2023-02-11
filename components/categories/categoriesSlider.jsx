@@ -149,9 +149,6 @@ const CategoriesSlider = () => {
     <div>
       <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
         <h1 className="">Explora nuestras categorias </h1>
-        <Link href="/productos" className="underline md:hover:text-gold">
-          Ver todos
-        </Link>
       </div>
       <div className="relative flex gap-7 overflow-x-auto overflow-y-hidden scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-lightBlue pb-5">
         <div className="flex flex-col gap-7 justify-between">
@@ -236,29 +233,41 @@ const CategoriesSlider = () => {
             link={categories[9].slug}
           />
         </div>
-        {/* <div className="flex gap-7 justify-between">
-          <VerticalCrad
-            image={"images/categories/" + categories[10].img}
-            name={categories[10].name}
-            articles={categories[10].articles}
-            link={categories[10].slug}
-          />
-        </div> */}
       </div>
-      {/* <div className="flex gap-7 justify-between animate-scrollLeft">
-        {categories.map((card) => {
-          return (
-            <div key={card.id}>
-              <HorizontalCrad
-                image={"images/categories/" + card.img}
-                name={card.name}
-                articles={card.articles}
-                link={card.slug}
+      <div>
+        <Link
+          href="/productos"
+          className="group flex justify-center items-center gap-4 mt-16"
+        >
+          <p className="text-xl font-bold">Ver todas</p>
+          <span className="group-hover:animate-rigthArrow">
+            <svg
+              fill="#000000"
+              width="26px"
+              height="26px"
+              viewBox="0 0 1920.00 1920.00"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="#000000"
+              stroke-width="0.019200000000000002"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#CCCCCC"
+                stroke-width="38.4"
               />
-            </div>
-          )
-        })}
-      </div> */}
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="m1304.824 345.002-81.25 81.249 476.466 476.582H0v114.922h1700.04l-476.466 476.465 81.25 81.25L1920 960.293z"
+                  fill-rule="evenodd"
+                />
+              </g>
+            </svg>
+          </span>
+        </Link>
+      </div>
     </div>
   )
 }
