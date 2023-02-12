@@ -4,7 +4,7 @@ import React from "react"
 
 function HorizontalCard({image, name, articles, link}) {
   return (
-    <Link href={`/${link}`}>
+    <Link href={`/productos/${link}`}>
       <div className="group w-[300px] h-[150px] md:w-[500px] md:h-[180px] bg-[#b6b9c2] rounded-[30px] hover:bg-opacity-90">
         <div className="ml-4 rounded-[30px]">
           <Image

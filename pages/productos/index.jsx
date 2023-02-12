@@ -63,7 +63,7 @@ const Productos = ({data}) => {
 
   return (
     <div className="pt-16 md:pt-0">
-      <div className="flex justify-center items-center h-12 bg-darkBlue text-background mb-2">
+      <div className="flex justify-center items-center h-12 bg-darkBlue text-background mb-2 md:absolute md:min-w-full md:left-0">
         <p className="text-[12px] md:text-base">
           Entregas urgentes en menos de 24 horas
         </p>
@@ -71,36 +71,19 @@ const Productos = ({data}) => {
           &nbsp;&nbsp;*Aplican restricciones
         </span>
       </div>
-      <div className="flex flex-col md:flex-row">
-        <div>
-          <div className="flex p-2 mb-2">
+      <div className="flex flex-col md:flex-row md:pt-12">
+        {/* left section */}
+        <div className="md:mt-10">
+          {/* searchbar */}
+          <div className="flex justify-between p-2 mb-2 md:w-[350px] md:mb-5">
             <input
               type="text"
               onChange={handleInputChange}
               value={input}
               placeholder="Busca tu producto..."
-              className="py-2 w-full bg-background rounded-lg px-4 shadow-md"
+              className="py-2 w-full bg-background rounded-lg px-4 shadow-md "
             />
-            <span
-              className="absolute md:block flex justify-center items-center md:right-auto md:ml-[82%] right-6 mt-[6px] text-darkBlue"
-              // onClick={() => setInput("")}
-            >
-              {/* {input ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-8 h-8 mx-auto my-auto text-darkBlue cursor-pointer"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            ) : ( */}
+            <span className="absolute  md:relative md:right-9 md:-mr-7 flex justify-center items-center right-6 md:mt-0 mt-[6px] text-darkBlue">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -118,7 +101,44 @@ const Productos = ({data}) => {
               {/* )} */}
             </span>
           </div>
-          <div>
+          {/* Desktop categories and subcategories */}
+          <div className="hidden md:block">
+            {categoryList?.map((category) => (
+              <div key={uuid()} id={category.id}>
+                <div
+                  className={`py-3 pl-4 border-l-2 border-darkBlue my-auto cursor-pointer ${
+                    category.active
+                      ? "border-l-4 border-gold font-semibold"
+                      : "hover:bg-[#efefef] text-darkBlue rounded-r-lg"
+                  }`}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  {category.name}
+                </div>
+                <div>
+                  {category.active && category.subcategories ? (
+                    <div className="ml-6">
+                      {category?.subcategories?.map((subcategory) => (
+                        <div
+                          key={subcategory.id}
+                          className={`py-3 pl-4 border-l-2 border-darkBlue my-auto cursor-pointer ${
+                            subcategory.active
+                              ? "border-l-4 border-gold font-semibold"
+                              : "hover:bg-[#efefef] text-darkBlue rounded-r-lg"
+                          }`}
+                          onClick={() => handleSubcategoryClick(subcategory)}
+                        >
+                          {subcategory.name}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Mobil categories and subcategories */}
+          <div className="md:hidden">
             <div>
               <h1 className="text-sm">Categorias</h1>
               <div className="flex py-2 overflow-x-auto scrollbar-none mb-2">
@@ -167,7 +187,7 @@ const Productos = ({data}) => {
             </div>
           </div>
         </div>
-        <div className="md:flex md:flex-wrap md:gap-5 md:mt-5">
+        <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
           {productsList.map((product) => {
             if (product?.title?.toLowerCase().includes(input) || input === "")
               return (
@@ -181,8 +201,8 @@ const Productos = ({data}) => {
               )
           })}
         </div>
-        <Faq />
       </div>
+      <Faq />
     </div>
   )
 }
