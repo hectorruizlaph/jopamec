@@ -1,15 +1,9 @@
 import React, {useRef, useState} from "react"
-// Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react"
 import ProductCard from "./product"
 import Link from "next/link"
-
-// Import Swiper styles
 import "swiper/css"
-import "swiper/css/pagination"
-
-// import required modules
-import {Pagination, Autoplay, Navigation} from "swiper"
+import {Autoplay, Navigation} from "swiper"
 
 import {data} from "../../data/data"
 
