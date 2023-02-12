@@ -1,23 +1,12 @@
-import React, {useState, useRef} from "react"
-import {useOnHoverOutside} from "../hooks/useOnHoverOutside"
-import ProductsMenue from "./productsMenu"
+import React, {useState} from "react"
 
 import Image from "next/image"
 import Link from "next/link"
 
 function Navbar() {
-  const dropdownRef = useRef(null) // Create a reference for dropdown container
-  const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false)
   const [isMenuMovilOpen, setMenuMovilOpen] = useState(false)
 
-  // Function to close dropdown
-  const closeHoverMenu = () => {
-    setMenuDropDownOpen(false)
-  }
-  useOnHoverOutside(dropdownRef, closeHoverMenu) // Call the hook
-
   //Navbar movil toggle
-
   const handleNavbarClick = () => {
     setMenuMovilOpen(!isMenuMovilOpen)
   }
@@ -103,18 +92,13 @@ function Navbar() {
           </div>
           <div className="hidden w-full md:block md:w-auto">
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <div className="ml-[62px] mobile:hidden" ref={dropdownRef}>
-                  <Link href="/productos">
-                    <button
-                      className="text-dark-grey-100 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:min-w-[70px] text-center"
-                      onMouseOver={() => setMenuDropDownOpen(true)} //use mouseover event to show dropdown
-                    >
-                      Productos
-                    </button>
-                  </Link>
-                  {isMenuDropDownOpen && <ProductsMenue />}
-                </div>
+              <li className="min-w-[50px]">
+                <Link
+                  href="/productos"
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-center"
+                >
+                  Productos
+                </Link>
               </li>
               <li className="min-w-[50px]">
                 <Link
