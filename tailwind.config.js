@@ -22,8 +22,6 @@ module.exports = withMT({
       },
       animation: {
         rigthArrow: "rigthArrow 2s infinite;",
-        scrollRigth: "scrollRigth 50s linear infinite",
-        scrollLeft: "scrollLeft 50s linear infinite;",
       },
       keyframes: {
         rigthArrow: {
@@ -31,19 +29,11 @@ module.exports = withMT({
           "100%": {transform: "translateX(0px)"},
           "50%": {transform: "translateX(10px)"},
         },
-        scrollRigth: {
-          "0%": {transform: "translateX(0)"},
-          "100%": {transform: "translateX(calc(-250px * 14))"},
-        },
-        scrollLeft: {
-          "100%": {transform: "translateX(100)"},
-          "0%": {transform: "translateX(calc(-250px * 14))"},
-        },
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
-  variants: {
-    scrollbar: ["rounded"],
-  },
+  plugins: [require("tailwind-scrollbar")({nocompatible: true})],
+  // variants: {
+  //   scrollbar: ["rounded"],
+  // },
 })

@@ -82,7 +82,7 @@ export default function Faq() {
       <h1 className="text-center text-[32px] font-bold mb-[32px] leading-normal mt-14">
         Preguntas Frecuentes
       </h1>
-      <div className="flex flex-col justify-center items-center md:max-w-[70%]">
+      <div className="flex flex-col justify-center items-center sm:max-w-[70%]">
         <Fragment>
           <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
             <AccordionHeader

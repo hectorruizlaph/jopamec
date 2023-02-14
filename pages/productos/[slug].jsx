@@ -38,10 +38,10 @@ export const getStaticProps = async (context) => {
 const Product = ({product}) => {
   const cleanProduct = product[0]
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center md:flex-row gap-10 md:gap-2">
+    <div className="flex flex-col sm:gap-20">
+      <div className="flex flex-col justify-center items-center sm:flex-row gap-10 sm:gap-2 sm:mt-[3%]">
         {/* desktop image */}
-        <div className="hidden md:flex md:flex-col md:justify-center md:items-center">
+        <div className="hidden sm:flex sm:flex-col sm:justify-center sm:items-center">
           <Image
             src="/images/gray-blob.svg"
             width={550}
@@ -59,7 +59,7 @@ const Product = ({product}) => {
           </div>
         </div>
         {/* mobil image */}
-        <div className="md:hidden py-10">
+        <div className="sm:hidden py-10">
           <Image
             src={`/images/allProducts/${cleanProduct.images[0]}`}
             width={330}
@@ -68,14 +68,14 @@ const Product = ({product}) => {
             className="mx-auto"
           />
         </div>
-        <div className="md:min-h-full md:flex md:justify-center md:items-center">
-          <div className="md:flex md:flex-col md:gap-8 md:justify-center md:align-middle md:w-[80%] md:mt-[10%] md:ml-[10%]">
-            <p className="text-lg font-bold md:text-[32px] text-darkBlue">
+        <div className="sm:min-h-full sm:flex sm:justify-center sm:items-center">
+          <div className="sm:flex sm:flex-col sm:gap-8 sm:justify-center sm:align-middle sm:w-[80%] sm:mt-[10%] sm:ml-[10%]">
+            <p className="text-lg font-bold sm:text-[32px] text-darkBlue">
               {cleanProduct.title}
             </p>
-            <p className="text-base md:w-[80%]">{cleanProduct.content}</p>
-            <div className="md:w-[90%]">
-              <p className="text-center font-semibold text-lg md:text-start">
+            <p className="text-base sm:w-[80%]">{cleanProduct.content}</p>
+            <div className="sm:w-[90%]">
+              <p className="text-center font-semibold text-lg sm:text-start">
                 Personalizamos tu proyecto
               </p>
               <p>
@@ -116,11 +116,11 @@ const Product = ({product}) => {
         })}
       </div>
       <div>
-        <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
-          <h1 className="">Productos </h1>
+        <div className="flex flex-col sm:flex-row sm:gap-10 font-bold text-[24px] sm:text-[32px] pb-[30px] leading-8 sm:leading-4">
+          <h1 className="">Productos Relacionados</h1>
         </div>
         <div>
-          <div className="hidden md:block">
+          <div className="hidden sm:block">
             <Swiper
               slidesPerView={5}
               spaceBetween={10}
@@ -146,7 +146,7 @@ const Product = ({product}) => {
               })}
             </Swiper>
           </div>
-          <div className="md:hidden">
+          <div className="sm:hidden">
             <Swiper
               slidesPerView={1}
               spaceBetween={0}
@@ -160,15 +160,23 @@ const Product = ({product}) => {
               className="mySwiper"
             >
               {products?.map((product) => {
-                return (
-                  <SwiperSlide key={product?.slug}>
-                    <ProductCard
-                      img={`images/allProducts/${product?.images[0]}`}
-                      title={product?.title}
-                      url={product?.slug}
-                    />
-                  </SwiperSlide>
-                )
+                //       categories_ids: ["2"],
+                //       subcategories_ids: "101",
+                if (
+                  product?.categories_ids[0] ==
+                    cleanProduct?.categories_ids[0] ||
+                  product?.subcategories_ids == cleanProduct?.subcategories_ids
+                ) {
+                  return (
+                    <SwiperSlide key={product?.slug}>
+                      <ProductCard
+                        img={`images/allProducts/${product?.images[0]}`}
+                        title={product?.title}
+                        url={product?.slug}
+                      />
+                    </SwiperSlide>
+                  )
+                }
               })}
             </Swiper>
           </div>

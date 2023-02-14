@@ -12,8 +12,14 @@ function Navbar() {
   }
 
   return (
-    <nav className="fixed md:relative z-50 w-full bg-background">
-      <div className="flex w-full md:flex-wrap md:items-center justify-between md:mx-auto z-50">
+    <nav
+      className="fixed z-50 w-full bg-background
+    sm:relative"
+    >
+      <div
+        className="flex w-full justify-between z-50
+      sm:flex-wrap sm:items-center sm:mx-auto"
+      >
         <div>
           <Link href="/" className="flex items-center py-2 z-50 px-4">
             <Image src="/images/logo.svg" width={130} height={50} alt="logo" />
@@ -23,7 +29,8 @@ function Navbar() {
           <div className="">
             <button
               type="button"
-              className="absolute right-6 top-4 p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 z-50"
+              className="absolute right-6 top-4 p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 z-50
+              md:hidden"
               onClick={handleNavbarClick}
             >
               <svg
@@ -81,7 +88,7 @@ function Navbar() {
                     onClick={() => setMenuMovilOpen(false)}
                   >
                     <Link href="/cotizar" className="font-bold text-left p-6">
-                      <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl">
+                      <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl">
                         Cotizar
                       </button>
                     </Link>
@@ -90,12 +97,18 @@ function Navbar() {
               </div>
             ) : null}
           </div>
-          <div className="hidden w-full md:block md:w-auto">
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <div
+            className="hidden w-full 
+          md:block sm:w-auto"
+          >
+            <ul
+              className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg 
+            sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium sm:border-0"
+            >
               <li className="min-w-[50px]">
                 <Link
                   href="/productos"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-center"
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 dark:hover:bg-gray-700 dark:hover:text-white text-center"
                 >
                   Productos
                 </Link>
@@ -103,7 +116,7 @@ function Navbar() {
               <li className="min-w-[50px]">
                 <Link
                   href="/galeria"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-center"
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 dark:hover:bg-gray-700 dark:hover:text-white text-center"
                 >
                   Galería
                 </Link>
@@ -111,7 +124,7 @@ function Navbar() {
               <li>
                 <Link
                   href="/nosotros"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:min-w-[65px] text-center"
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 sm:min-w-[65px] text-center"
                 >
                   Nosotros
                 </Link>
@@ -119,7 +132,7 @@ function Navbar() {
               <li>
                 <Link
                   href="/contacto"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:min-w-[65px] text-center"
+                  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 sm:min-w-[65px] text-center"
                 >
                   Contacto
                 </Link>
@@ -129,7 +142,10 @@ function Navbar() {
         </div>
         <div>
           <Link href="/cotizar">
-            <button className="bg-gold px-[18px] py-[12px] rounded-lg hidden md:block text-background shadow-lg hover:shadow-2xl">
+            <button
+              className="hidden bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl
+            md:block"
+            >
               Cotizar
             </button>
           </Link>

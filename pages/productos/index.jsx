@@ -62,20 +62,20 @@ const Productos = ({data}) => {
   }
 
   return (
-    <div className="pt-16 md:pt-0">
-      <div className="flex justify-center items-center h-12 bg-darkBlue text-background mb-2 md:absolute md:min-w-full md:left-0">
-        <p className="text-[12px] md:text-base">
+    <div className="pt-16 sm:pt-0">
+      <div className="flex justify-center items-center h-12 bg-darkBlue text-background mb-2 sm:absolute sm:min-w-full sm:left-0">
+        <p className="text-[12px] sm:text-base">
           Entregas urgentes en menos de 24 horas
         </p>
-        <span className="text-[10px] md:text-xs">
+        <span className="text-[10px] sm:text-xs">
           &nbsp;&nbsp;*Aplican restricciones
         </span>
       </div>
-      <div className="flex flex-col md:flex-row md:pt-12">
+      <div className="flex flex-col sm:flex-row sm:pt-12">
         {/* left section */}
-        <div className="md:mt-10">
+        <div className="sm:mt-10">
           {/* searchbar */}
-          <div className="flex justify-between p-2 mb-2 md:w-[350px] md:mb-5">
+          <div className="flex justify-between p-2 mb-2 sm:w-[350px] sm:mb-5">
             <input
               type="text"
               onChange={handleInputChange}
@@ -83,7 +83,7 @@ const Productos = ({data}) => {
               placeholder="Busca tu producto..."
               className="py-2 w-full bg-background rounded-lg px-4 shadow-md "
             />
-            <span className="absolute  md:relative md:right-9 md:-mr-7 flex justify-center items-center right-6 md:mt-0 mt-[6px] text-darkBlue">
+            <span className="absolute  sm:relative sm:right-9 sm:-mr-7 flex justify-center items-center right-6 sm:mt-0 mt-[6px] text-darkBlue">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -102,7 +102,7 @@ const Productos = ({data}) => {
             </span>
           </div>
           {/* Desktop categories and subcategories */}
-          <div className="hidden md:block">
+          <div className="hidden sm:block">
             {categoryList?.map((category) => (
               <div key={uuid()} id={category.id}>
                 <div
@@ -138,7 +138,7 @@ const Productos = ({data}) => {
             ))}
           </div>
           {/* Mobil categories and subcategories */}
-          <div className="md:hidden">
+          <div className="sm:hidden">
             <div>
               <h1 className="text-sm">Categorias</h1>
               <div className="flex py-2 overflow-x-auto scrollbar-none mb-2">
@@ -187,7 +187,7 @@ const Productos = ({data}) => {
             </div>
           </div>
         </div>
-        <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
+        <div className="sm:flex sm:flex-wrap sm:gap-5 sm:mt-5 sm:ml-10">
           {productsList.map((product) => {
             if (product?.title?.toLowerCase().includes(input) || input === "")
               return (

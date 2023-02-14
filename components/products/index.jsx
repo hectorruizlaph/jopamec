@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react"
+import React, {useRef, useState, useEffect} from "react"
 import {Swiper, SwiperSlide} from "swiper/react"
 import ProductCard from "./product"
 import Link from "next/link"
@@ -7,19 +7,30 @@ import {Autoplay, Navigation} from "swiper"
 
 import {data} from "../../data/data"
 
+// sm	640px	@media (min-width: 640px) { ... }
+// md	768px	@media (min-width: 768px) { ... }
+// lg	1024px	@media (min-width: 1024px) { ... }
+// xl	1280px	@media (min-width: 1280px) { ... }
+// 2xl	1536px
+
 const products = data?.products
 
 const Products = () => {
+  // const screenWidth = window.innerWidth
+  // const [windowWidth, setWindowWidth] = useState(screenWidth)
+
+  // useEffect(() => {
+  //   console.log(windowWidth)
+  // }, [windowWidth])
   return (
     <div>
-      <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
+      <div className="flex flex-col sm:flex-row sm:gap-10 font-bold text-[24px] sm:text-[32px] pb-[30px] leading-8 sm:leading-4">
         <h1 className="">Explora nuestros productos </h1>
       </div>
       <div>
-        <div className="hidden md:block">
+        <div>
           <Swiper
-            slidesPerView={5}
-            spaceBetween={10}
+            spaceBetween={1}
             autoplay={{
               delay: 2500,
               disableOnInteraction: true,
@@ -28,36 +39,28 @@ const Products = () => {
             modules={[Autoplay, Navigation]}
             // modules={[Pagination, Navigation]}
             className="mySwiper"
-          >
-            {products?.map((product) => {
-              return (
-                <SwiperSlide key={product?.slug}>
-                  <ProductCard
-                    img={`images/allProducts/${product?.images[0]}`}
-                    title={product?.title}
-                    url={product?.slug}
-                  />
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
-        </div>
-        <div className="md:hidden">
-          <Swiper
             slidesPerView={1}
-            spaceBetween={0}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: true,
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+              1200: {
+                slidesPerView: 3,
+              },
+              1680: {
+                slidesPerView: 4,
+              },
+              1900: {
+                slidesPerView: 5,
+              },
+              2450: {
+                slidesPerView: 6,
+              },
             }}
-            navigation={true}
-            modules={[Autoplay, Navigation]}
-            // modules={[Pagination, Navigation]}
-            className="mySwiper"
           >
             {products?.map((product) => {
               return (
-                <SwiperSlide key={product?.slug}>
+                <SwiperSlide key={product?.slug} className="mx-auto">
                   <ProductCard
                     img={`images/allProducts/${product?.images[0]}`}
                     title={product?.title}

@@ -147,7 +147,7 @@ const categories = [
 const CategoriesSlider = () => {
   return (
     <div>
-      <div className="flex flex-col md:flex-row md:gap-10 font-bold text-[24px] md:text-[32px] pb-[30px] leading-8 md:leading-4">
+      <div className="flex flex-col sm:flex-row sm:gap-10 font-bold text-[24px] sm:text-[32px] pb-[30px] leading-8 sm:leading-4">
         <h1 className="">Explora nuestras categorias </h1>
       </div>
       <div className="relative flex gap-7 overflow-x-auto overflow-y-hidden scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-lightBlue pb-5">
