@@ -11,7 +11,7 @@ function Footer() {
                     <h2 className="mb-2 text-sm font-semibold uppercase">Productos</h2>
                     <ul className="text-gray-600 sm:min-w-[220px]">
                         <li className="">
-                            <Link href="/productos/reconocimientos" className="hover:text-[#c89210] hover:text-base">Reconocimientos</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Reconocimientos</Link>
                         </li>
                         <li className="">
                             <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Placas fundidas y fotograbadas</Link>
@@ -49,7 +49,7 @@ function Footer() {
                     <h2 className="mb-2 text-sm font-semibold uppercase">INFORMACIÓN</h2>
                     <ul className="text-gray-600 sm:min-w-[140px]">
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Galería</Link>
+                            <Link href="/galeria" className="hover:text-[#c89210] hover:text-base">Galería</Link>
                         </li>
                         <li className="">
                             <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Productos</Link>
@@ -58,7 +58,7 @@ function Footer() {
                             <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Acerca de nosotros</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Contacto</Link>
+                            <Link href="/nosotros" className="hover:text-[#c89210] hover:text-base">Contacto</Link>
                         </li>
                     </ul>
 
@@ -67,7 +67,7 @@ function Footer() {
                     <h2 className="mb-2 text-sm font-semibold uppercase">CONTACTO</h2>
                     <ul className="text-gray-600 sm:min-w-[280px]">
                         <li>
-                            <a href="https://goo.gl/maps/ai5mLXdXqCEPYtQM6" className="flex">
+                            <a href="https://goo.gl/maps/ai5mLXdXqCEPYtQM6" className="flex" target="_blank" rel="noreferrer">
                                 <div className="group flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 hover:w-5 hover:h-5 group-hover:text-[#c89210] hover:text-base">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -122,7 +122,7 @@ function Footer() {
 
             </div>
             <hr className="w-[90%] h-[2px] my-4 border-2 rounded"></hr>
-            <div className="flex flex-col justify-center items-center text-center text-sm md:flex-row"><p>© Placas y Reconocimientos JOPAMEC {new Date().getFullYear()}</p> <span className="hidden lg:block px-2">|</span><p>Todos los derechos reservados</p>  <span className="hidden lg:block px-2">|</span> <div className="flex whitespace-nowrap justify-center items-center">Creado por <a href="https://my-app.mx/" className="flex justify-center items-center">&nbsp; My App &nbsp; <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 473" width="25">
+            <div className="flex flex-col justify-center items-center text-center text-sm mb-4 md:flex-row"><p>© Placas y Reconocimientos JOPAMEC {new Date().getFullYear()}</p> <span className="hidden lg:block px-2">|</span><p>Todos los derechos reservados</p>  <span className="hidden lg:block px-2">|</span> <div className="flex whitespace-nowrap justify-center items-center">Creado por <a href="https://my-app.mx/" target="_blank" rel="noreferrer" className="flex justify-center items-center">&nbsp; My App &nbsp; <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 473" width="25">
                 <title>My App</title>
                 <desc>Logotipo My App</desc>
                 <path fill="#239de3" d="M387 383a92 92 0 01-27 64 91 91 0 01-64 26H91a91 91 0 01-91-90V177a92 92 0 0127-64 91 91 0 0164-26h205a91 91 0 0191 90v206z"></path>

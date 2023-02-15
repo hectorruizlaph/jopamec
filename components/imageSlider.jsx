@@ -66,7 +66,7 @@ const Slide = ({slideImage}) => {
         />
       </div>
       <div
-        className="hidden 
+        className="hidden
       lg:block
       xl:hidden
       2xl:block"
@@ -85,7 +85,11 @@ const Slide = ({slideImage}) => {
 const Slider = () => {
   SwiperCore.use([Autoplay])
   return (
-    <div className="max-w-[192px] sm:max-w-lg">
+    <div
+      className="max-w-[192px] 
+    sm:max-w-lg
+    2xl:-ml-[200px]"
+    >
       <Swiper
         slidesPerView={1}
         loop={true}
