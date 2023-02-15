@@ -248,15 +248,15 @@ const CategoriesSlider = () => {
               viewBox="0 0 1920.00 1920.00"
               xmlns="http://www.w3.org/2000/svg"
               stroke="#000000"
-              stroke-width="0.019200000000000002"
+              strokeWidth="0.019200000000000002"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+              <g id="SVGRepo_bgCarrier" strokeWidth="0" />
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 stroke="#CCCCCC"
-                stroke-width="38.4"
+                strokeWidth="38.4"
               />
               <g id="SVGRepo_iconCarrier">
                 <path

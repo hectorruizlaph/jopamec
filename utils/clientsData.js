@@ -1,0 +1,18 @@
+export const clients = [
+  "tec",
+  "arenamty",
+  "banorte",
+  "cfe",
+  "clubdeleones",
+  "clubindustrial",
+  "femsa",
+  "fresnillo",
+  "harleydavidson",
+  "imss",
+  "oxxo",
+  "pemex",
+  "penoles",
+  "sanpedro",
+  "soriana",
+  "uanl",
+]
