@@ -6,11 +6,15 @@ const Contacto = () => {
   const windowSize = useWindowSize()
 
   return (
-    <div className="flex flex-col justify-center items-center pt-32 gap-20 lg:gap-36 xl:gap-48">
+    <div
+      className="flex flex-col justify-center items-center pt-32 gap-20 
+    lg:gap-36 
+    xl:gap-48"
+    >
       <div>
         <h1
           className="text-[28px] font-bold leading-8 mb-8 text-center 
-        sm:text-start sm:text-[32px]"
+        sm:text-start sm:text-[32px] md:min-w-[550px]"
         >
           ¿En qué podemos ayudarte?
         </h1>
