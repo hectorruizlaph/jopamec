@@ -26,7 +26,7 @@ const Input = ({
                 id={id}
                 name={name}
                 placeholder={placeholder}
-                className="block w-full rounded-md border-gray-400 py-3 pl-7 pr-12 focus:border-gray-500 sm:text-sm"
+                className="block w-full rounded-md border-2 border-lightBlue shadow-md py-3 pl-7 pr-12 sm:text-sm"
             />
             {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}
         </div>

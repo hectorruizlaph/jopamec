@@ -27,7 +27,7 @@ const TextArea = ({
                 name={name}
                 rows={5}
                 placeholder={placeholder}
-                className="block w-full resize-none rounded-md border border-gray-400 pl-7 pt-4 shadow-sm focus:border-gray-500 sm:text-sm"
+                className="block w-full resize-none rounded-md border-2 border-lightBlue pl-7 pt-4 shadow-md sm:text-sm"
             ></textarea>
             {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}
         </div>

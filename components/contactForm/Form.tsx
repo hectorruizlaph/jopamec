@@ -93,26 +93,31 @@ export const Form = () => {
                 error={!!errors.message}
                 errorMessage={!!errors.message ? errors.message : ""}
             />
-            <button
-                className="mt-4 w-full rounded-md bg-gold py-3 px-5 text-lg text-white outline-none shadow-md hover:shadow-lg"
-                type="submit"
-                disabled={loading}
-            >
-                {loading !== true ? (
-                    "Enviar"
-                ) : (
-                    <div className="flex h-full w-full items-center justify-center ">
-                        <RiLoader5Fill className="h-8 w-8 animate-spin" />
-                    </div>
-                )}
-            </button>
-            <p className="mt-5 text-green-500 dark:text-green-500">
-                {success !== false ? (
-                    messageState
-                ) : (
-                    <span className="text-red-500 dark:text-red-500">{messageState}</span>
-                )}
-            </p>
+            <div className="flex mt-4">
+                <button
+                    className="rounded-md bg-gold py-3 px-5 text-white outline-none shadow-md hover:shadow-lg"
+                    type="submit"
+                    disabled={loading}
+                >
+                    {loading !== true ? (
+                        "Enviar"
+                    ) : (
+                        <div className="flex h-full w-full items-center justify-center ">
+                            <RiLoader5Fill className="h-8 w-8 animate-spin" />
+                        </div>
+                    )}
+                </button>
+                <div className="flex flex-col justify-center ml-6">
+                    <p>O contáctanos por WhatsApp</p>
+                </div>
+                <p className="mt-5 text-green-500">
+                    {success !== false ? (
+                        messageState
+                    ) : (
+                        <span className="text-red-500">{messageState}</span>
+                    )}
+                </p>
+            </div>
         </form>
     );
 };
