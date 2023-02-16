@@ -1,6 +1,6 @@
 import Navbar from './navbar'
 import Footer from './footer'
-
+import { GlobalContextProvider } from '../context/store'
 interface LayoutProps {
     children: React.ReactNode;
 }
@@ -11,7 +11,9 @@ export default function Layout({ children }: LayoutProps) {
         sm:px-2 sm:pt-[40px] 
         lg:px-32 lg:pt-[40px]">
             <Navbar />
-            <main className="px-2">{children}</main>
+            <GlobalContextProvider>
+                <main className="px-2">{children}</main>
+            </GlobalContextProvider>
             <Footer />
         </div>
     )

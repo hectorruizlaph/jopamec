@@ -1,8 +1,6 @@
-import GalleryComponent from "../components/gallery/gallery"
+import {useGlobalContext} from "../context/store"
 
-import {useState} from "react"
-import Image from "next/image"
-import PhotoAlbum from "react-photo-album"
+// import PhotoAlbum from "react-photo-album"
 import {
   Grid1,
   Grid2,
@@ -25,18 +23,20 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 import photos from "../components/gallery/photos"
 
 export default function Gallery() {
-  console.log(photos)
+  const {sliderImageindex, setSliderImageindex} = useGlobalContext()
 
-  // const [index, setIndex] = useState(-1)
-
-  console.log(photos[0].src)
   let idNum = 0
-
   return (
     <div className="pt-20">
       <div className="flex justify-center items-center flex-wrap gap-4">
-        {/* 1 seccion de 18 */}
         <Grid1 id1={idNum} id2={(idNum += 1)} id3={(idNum += 1)} />
+        <Grid2 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        <Grid3 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        <Grid4 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        <Grid5 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        <Grid6 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        {/* 18 */}
+        <Grid1 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
         <Grid2 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
         <Grid3 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
         <Grid4 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
@@ -53,32 +53,18 @@ export default function Gallery() {
         <Grid1 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
         <Grid2 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
         <Grid3 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-        <Grid4 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-        <Grid5 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-        <Grid6 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
+        {/* 73 */}
 
-        <Grid1 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-        <Grid2 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-        <Grid3 id1={(idNum += 1)} id2={(idNum += 1)} id3={(idNum += 1)} />
-      </div>
-      {/* <div>
-        <PhotoAlbum
-          photos={photos}
-          layout="columns"
-          targetRowHeight={150}
-          onClick={({index}) => setIndex(index)}
-          className="rounded-xl"
-        />
-
+        {/* ligthbox setIndex */}
         <Lightbox
           slides={photos}
-          open={index >= 0}
-          index={index}
-          close={() => setIndex(-1)}
+          open={sliderImageindex >= 0}
+          index={sliderImageindex}
+          close={() => setSliderImageindex(-1)}
           // enable optional lightbox plugins
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
         />
-      </div> */}
+      </div>
     </div>
   )
 }
