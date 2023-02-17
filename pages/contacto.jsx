@@ -2,6 +2,8 @@ import React from "react"
 import {Form} from "../components/contactForm/Form"
 import useWindowSize from "../hooks/useWindowSize"
 import Faq from "../components/faq"
+import WhyUsCard from "../components/whyUs/whyUsCard"
+import Image from "next/image"
 
 const Contacto = () => {
   const windowSize = useWindowSize()
@@ -12,6 +14,33 @@ const Contacto = () => {
     lg:gap-36 
     xl:gap-48"
     >
+      <div className="flex flex-col justify-center items-center gap-12 xl:flex-row xl:gap-28">
+        <div className="flex flex-col justify-center items-center gap-5 w-[270px]">
+          <Image
+            src="/images/whyUs/contact.svg"
+            width={64}
+            height={64}
+            alt="icon"
+          />
+          <h2 className="font-bold text-[20px]">Contacto</h2>
+          <p className="text-sm text-center whitespace-nowrap">
+            Teléfono: +52 81 8346 9582 y +52 81 8114 8501 <br /> Correo:
+            monterrey@placasjopamec.com
+          </p>
+        </div>
+
+        <WhyUsCard
+          img="location.svg"
+          title="Ubicación"
+          description="Enrique C. Livas 314, Monterrey, NL"
+        />
+
+        <WhyUsCard
+          img="tools.svg"
+          title="Tecnicas"
+          description="Impresión en sublimación - Punta de diamante - Grabado láser - Fundición"
+        />
+      </div>
       <div>
         <h1
           className="text-[28px] font-bold leading-8 mb-8 text-center 
