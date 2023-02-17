@@ -270,6 +270,11 @@
   dependencies:
     glob "7.1.7"
 
+"@next/font@^13.1.6":
+  version "13.1.6"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.1.6.tgz#2bf99e3321ec9b4d65781c0d0ebff072e8752e1a"
+  integrity sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==
+
 "@next/swc-android-arm-eabi@13.0.4":
   version "13.0.4"
   resolved "https://registry.yarnpkg.com/@next/swc-android-arm-eabi/-/swc-android-arm-eabi-13.0.4.tgz#684fe26ff2a05b9dd8c4fb84bc87ba807e3bddc0"
@@ -2708,11 +2713,6 @@ react-merge-refs@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
-
-react-photo-album@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-photo-album/-/react-photo-album-2.0.1.tgz#6c3d68dd93cbdb51e9637bc783f62f7efaf0b0a0"
-  integrity sha512-U8HRMdHBjIE0VfeM+vLwTay2hCQYF0do9MkjB6yM7Cp+ZJFLajBNZhlyD41WH6a3fC/alZGsHCcqT3nZQs1icw==
 
 react-uuid@^2.0.0:
   version "2.0.0"

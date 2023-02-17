@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
     return (
-        <div className="bg-[#FCFCFC] font-manrope text-base
+        <div className="bg-[#FCFCFC] font-jopamec text-base
         sm:px-2 sm:pt-[40px] 
         lg:px-32 lg:pt-[40px]">
             <Navbar />

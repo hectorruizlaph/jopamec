@@ -1,10 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import {useGlobalContext} from "../../../context/store"
 
-const VerticalCrad = ({image, name, articles, link}) => {
+const VerticalCrad = ({image, name, articles, id}) => {
+  const {setCategoryContext} = useGlobalContext()
+
   return (
-    <Link href={`/${link}`}>
+    <Link href="/productos" onClick={() => setCategoryContext(id)}>
       <div className="group w-[180px] h-full sm:w-[180px] sm:h-[400px] bg-[#b6b9c2] rounded-[30px] sm:pt-6 hover:bg-opacity-90 ">
         <div className="sm:mt-3">
           <Image

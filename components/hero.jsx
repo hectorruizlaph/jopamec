@@ -18,12 +18,12 @@ const Hero = () => {
         sm:pb-8 sm:text-start sm:max-w-full"
         >
           <h1
-            className="font-manrope font-bold leading-[40px] text-darkBlue text-[24px]
+            className="font-bold leading-[40px] text-darkBlue text-[24px]
           sm:leading-[70px] sm:text-[54px]"
           >
             25 años creando
           </h1>
-          <h1 className="font-manrope font-bold sm:leading-[70px] text-[24px] sm:text-[54px] text-lightBlue">
+          <h1 className="font-bold sm:leading-[70px] text-[24px] sm:text-[54px] text-lightBlue">
             <TextSlider />
           </h1>
         </div>

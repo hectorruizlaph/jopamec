@@ -18,12 +18,14 @@ export const data = {
       name: "Todas",
       slug: "todas",
       subcategories: false,
-      active: false,
+      active: true,
     },
     {
       id: "1",
       name: "Reconocimientos",
       slug: "reconocimientos",
+      img: "reconocimientos-01.png",
+      articles: 46,
       subcategories: [
         {id: "107", name: "Recuadros importados", category: "1", active: false},
         {id: "108", name: "Sublimación", category: "1", active: false},
@@ -35,6 +37,8 @@ export const data = {
       id: "2",
       name: "Placas fundidas y fotograbadas",
       slug: "placas",
+      img: "placas-01.png",
+      articles: 21,
       subcategories: [
         {
           id: "101",
@@ -67,6 +71,8 @@ export const data = {
       id: "3",
       name: "Placas tipo industrial",
       slug: "placas-tipo-industrial",
+      img: "placas-tipo-industrial-00.png",
+      articles: 7,
       subcategories: [
         {
           id: "110",
@@ -89,6 +95,8 @@ export const data = {
       slug: "yetis",
       subcategories: false,
       active: false,
+      img: "grabado-laser-01.png",
+      articles: 14,
     },
     {
       id: "5",
@@ -96,11 +104,15 @@ export const data = {
       slug: "pines",
       subcategories: false,
       active: false,
+      img: "pines-01.png",
+      articles: 6,
     },
     {
       id: "6",
       name: "Llaveros",
       slug: "llaveros",
+      img: "llaveros-01.png",
+      articles: 7,
       subcategories: [
         {
           id: "105",
@@ -116,6 +128,8 @@ export const data = {
       id: "9",
       name: "Platos/Charolas",
       slug: "platos-charolas",
+      img: "platos-charolas-01.png",
+      articles: 18,
       subcategories: false,
       active: false,
     },
@@ -123,6 +137,8 @@ export const data = {
       id: "10",
       name: "Gafetes",
       slug: "gafetes",
+      img: "gafetes-01.png",
+      articles: 3,
       subcategories: false,
       active: false,
     },
@@ -130,6 +146,8 @@ export const data = {
       id: "11",
       name: "Señalamientos",
       slug: "senalamientos",
+      img: "senalamientos-01.png",
+      articles: 4,
       subcategories: false,
       active: false,
     },
@@ -137,6 +155,8 @@ export const data = {
       id: "12",
       name: "Porta escritorio",
       slug: "porta-escritorio",
+      img: "porta-escritorio-01.png",
+      articles: 6,
       subcategories: false,
       active: false,
     },
@@ -144,6 +164,8 @@ export const data = {
       id: "13",
       name: "Placa grabada",
       slug: "grabadas",
+      img: "placa-grabada-01.png",
+      articles: 6,
       subcategories: false,
       active: false,
     },

@@ -11,37 +11,37 @@ function Footer() {
                     <h2 className="mb-2 text-sm font-semibold uppercase">Productos</h2>
                     <ul className="text-gray-600 sm:min-w-[220px]">
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Reconocimientos</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Reconocimientos</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Placas fundidas y fotograbadas</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Placas fundidas y fotograbadas</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Placas tipo industrial</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Placas tipo industrial</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Yetis</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Yetis</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Pines</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Pines</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Llaveros</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Llaveros</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Platos/Charolas</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Platos/Charolas</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Gafetes</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Gafetes</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Señalamientos</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Señalamientos</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Porta escritorio</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Porta escritorio</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Placa grabada</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Placa grabada</Link>
                         </li>
                     </ul>
                 </div>
@@ -49,16 +49,16 @@ function Footer() {
                     <h2 className="mb-2 text-sm font-semibold uppercase">INFORMACIÓN</h2>
                     <ul className="text-gray-600 sm:min-w-[140px]">
                         <li className="">
-                            <Link href="/galeria" className="hover:text-[#c89210] hover:text-base">Galería</Link>
+                            <Link href="/galeria" className="hover:text-[#c89210] ">Galería</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Productos</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Productos</Link>
                         </li>
                         <li className="">
-                            <Link href="/productos" className="hover:text-[#c89210] hover:text-base">Acerca de nosotros</Link>
+                            <Link href="/productos" className="hover:text-[#c89210] ">Acerca de nosotros</Link>
                         </li>
                         <li className="">
-                            <Link href="/nosotros" className="hover:text-[#c89210] hover:text-base">Contacto</Link>
+                            <Link href="/nosotros" className="hover:text-[#c89210] ">Contacto</Link>
                         </li>
                     </ul>
 
@@ -69,34 +69,34 @@ function Footer() {
                         <li>
                             <a href="https://goo.gl/maps/ai5mLXdXqCEPYtQM6" className="flex" target="_blank" rel="noreferrer">
                                 <div className="group flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 hover:w-5 hover:h-5 group-hover:text-[#c89210] hover:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 group-hover:text-[#c89210] ">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                     </svg>
                                     <div className="flex flex-col ml-2">
-                                        <p className="hover:text-[#c89210] hover:text-base sm:min-h-[25px]">Enrique C. Livas 314, Monterrey, NL</p>
-                                        <p className="hover:text-[#c89210] hover:text-base sm:min-h-[25px]">¿Cómo llegar?</p>
+                                        <p className="hover:text-[#c89210]  sm:min-h-[25px]">Enrique C. Livas 314, Monterrey, NL</p>
+                                        <p className="hover:text-[#c89210]  sm:min-h-[25px]">¿Cómo llegar?</p>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li className="flex sm:min-h-[40px]">
                             <div className="group flex items-center mt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 hover:w-5 hover:h-5 group-hover:text-[#c89210] hover:text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 group-hover:text-[#c89210] ">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
 
-                                <a href="#" className="hover:text-[#c89210] hover:text-base ml-2">monterrey@placasjopamec.com</a>
+                                <a href="#" className="hover:text-[#c89210]  ml-2">monterrey@placasjopamec.com</a>
                             </div>
                         </li>
                         <li className="flex mt-4">
                             <div className="group flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 hover:w-5 hover:h-5 group-hover:text-[#c89210] hover:text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 group-hover:text-[#c89210] ">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                                 </svg>
                                 <div className="flex flex-col">
-                                    <a href="tel:+528183469582" className="hover:text-[#c89210] hover:text-[15px] ml-2 sm:min-h-[25px]">+52 81 8346 9582</a>
-                                    <a href="tel:+528181148501" className="hover:text-[#c89210] hover:text-base ml-2 sm:min-h-[25px]">+52 81 8346 9582</a>
+                                    <a href="tel:+528183469582" className="hover:text-[#c89210]  ml-2 sm:min-h-[25px]">+52 81 8346 9582</a>
+                                    <a href="tel:+528181148501" className="hover:text-[#c89210]  ml-2 sm:min-h-[25px]">+52 81 8346 9582</a>
                                 </div>
                             </div>
                         </li>

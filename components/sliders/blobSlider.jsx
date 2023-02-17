@@ -9,7 +9,7 @@ const BlobSlider = () => {
         className="flex flex-col justify-center items-center w-full
       md:hidden"
       >
-        <Image src="/images/blob.svg" width={280} height={280} alt="blob" />
+        <Image src="/images/blob.png" width={280} height={280} alt="blob" />
         <div className="absolute">
           <Slider />
         </div>
@@ -19,7 +19,7 @@ const BlobSlider = () => {
       md:flex
       lg:hidden"
       >
-        <Image src="/images/blob.svg" width={400} height={400} alt="blob" />
+        <Image src="/images/blob.png" width={400} height={400} alt="blob" />
         <div className="absolute">
           <Slider />
         </div>
@@ -28,7 +28,7 @@ const BlobSlider = () => {
         className="hidden flex-col justify-center items-center w-full
       lg:flex"
       >
-        <Image src="/images/blob.svg" width={560} height={560} alt="blob" />
+        <Image src="/images/blob.png" width={560} height={560} alt="blob" />
         <div className="absolute">
           <Slider />
         </div>

@@ -7,7 +7,7 @@ export const Grid1 = ({id1, id2, id3}) => {
   const {setSliderImageindex} = useGlobalContext()
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >
@@ -61,7 +61,7 @@ export const Grid2 = ({id1, id2, id3}) => {
   const {setSliderImageindex} = useGlobalContext()
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >
@@ -116,7 +116,7 @@ export const Grid3 = ({id1, id2, id3}) => {
 
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >
@@ -171,7 +171,7 @@ export const Grid4 = ({id1, id2, id3}) => {
 
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >
@@ -226,7 +226,7 @@ export const Grid5 = ({id1, id2, id3}) => {
 
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >
@@ -281,7 +281,7 @@ export const Grid6 = ({id1, id2, id3}) => {
 
   return (
     <div
-      className="grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
+      className="mx-auto grid grid-cols-4 grid-rows-4 gap-4 h-[350px] w-full
     sm:h-[400px]
     md:h-[500px] md:w-[500px]"
     >

@@ -6,6 +6,7 @@ import {Swiper, SwiperSlide} from "swiper/react"
 import Link from "next/link"
 import "swiper/css"
 import {Autoplay, Navigation} from "swiper"
+import Faq from "../../components/faq"
 
 const products = data?.products
 
@@ -27,29 +28,21 @@ export const getStaticProps = async (context) => {
   }
 }
 
-//       title: "Placa fundida en bronce",
-//       slug: "placa-fundida-01",
-//       folder: "fundicion/placas-fundidas",
-//       images: ["PLACA-FUNDIDA-CECILIO.png"],
-//       content: "Placa fundida en bronce. Una sola pieza con espesor de 1 cm",
-//       categories_ids: ["2"],
-//       subcategories_ids: "101",
-
 const Product = ({product}) => {
   const cleanProduct = product[0]
   return (
-    <div className="flex flex-col sm:gap-20">
-      <div className="flex flex-col justify-center items-center sm:flex-row gap-10 sm:gap-2 sm:mt-[3%]">
+    <div className="flex flex-col gap-14 sm:gap-20 my-28 sm:py-0 ">
+      <div className="pl-2 sm:pl-0 flex flex-col justify-center items-center sm:flex-row gap-2 sm:mt-[3%] ">
         {/* desktop image */}
-        <div className="hidden sm:flex sm:flex-col sm:justify-center sm:items-center">
+        <div className="hidden sm:flex flex-col justify-center items-center">
           <Image
-            src="/images/gray-blob.svg"
-            width={550}
-            height={550}
+            src="/images/gray-blob.png"
+            width={416}
+            height={451}
             alt="blob"
-            className="ml-[60px] -mt-[10px]"
+            className="w-[80%] ml-0 -mt-[10px] sm:w-full sm:ml-[60px] sm:-mt-[10px]"
           />
-          <div className="-mt-[80%] ">
+          <div className="-mt-[90%] sm:-mt-[80%] ">
             <Image
               src={`/images/allProducts/${cleanProduct.images[0]}`}
               width={400}
@@ -59,23 +52,33 @@ const Product = ({product}) => {
           </div>
         </div>
         {/* mobil image */}
-        <div className="sm:hidden py-10">
+
+        <div className="flex flex-col justify-center items-center sm:hidden">
           <Image
-            src={`/images/allProducts/${cleanProduct.images[0]}`}
-            width={330}
-            height={330}
-            alt="producto"
-            className="mx-auto"
+            src="/images/gray-blob.png"
+            width={316}
+            height={351}
+            alt="blob"
+            className="w-[80%] ml-0 -mt-[10px] sm:w-full sm:ml-[60px] sm:-mt-[10px]"
           />
+          <div className="-mt-[90%] sm:-mt-[80%] ">
+            <Image
+              src={`/images/allProducts/${cleanProduct.images[0]}`}
+              width={300}
+              height={300}
+              alt="producto"
+            />
+          </div>
         </div>
-        <div className="sm:min-h-full sm:flex sm:justify-center sm:items-center">
-          <div className="sm:flex sm:flex-col sm:gap-8 sm:justify-center sm:align-middle sm:w-[80%] sm:mt-[10%] sm:ml-[10%]">
-            <p className="text-lg font-bold sm:text-[32px] text-darkBlue">
+        <div className="min-h-full flex justify-center items-center">
+          <div className="flex flex-col gap-8 sm:justify-center sm:align-middle sm:w-[80%] sm:mt-[10%] sm:ml-[10%]">
+            <p className="text-2xl font-bold sm:text-[32px] text-darkBlue">
               {cleanProduct.title}
             </p>
-            <p className="text-base sm:w-[80%]">{cleanProduct.content}</p>
-            <div className="sm:w-[90%]">
-              <p className="text-center font-semibold text-lg sm:text-start">
+            <p className="text-base w-[80%]">{cleanProduct.content}</p>
+
+            <div className="w-[90%]">
+              <p className="font-semibold text-lg text-start">
                 Personalizamos tu proyecto
               </p>
               <p>
@@ -84,7 +87,7 @@ const Product = ({product}) => {
               </p>
             </div>
             <div className="flex">
-              <button className="px-[18px] h-[40px] rounded-lg bg-gold text-background font-manrope text-lg shadow-lg hover:shadow-xl">
+              <button className="px-[18px] h-[40px] rounded-lg bg-gold text-background text-lg shadow-lg hover:shadow-xl">
                 Cotizar ahora
               </button>
               <a
@@ -120,13 +123,30 @@ const Product = ({product}) => {
           <h1 className="">Productos Relacionados</h1>
         </div>
         <div>
-          <div className="hidden sm:block">
+          <div>
             <Swiper
-              slidesPerView={5}
               spaceBetween={10}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: true,
+              }}
+              slidesPerView={1}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                1080: {
+                  slidesPerView: 3,
+                },
+                1680: {
+                  slidesPerView: 4,
+                },
+                1900: {
+                  slidesPerView: 5,
+                },
+                2450: {
+                  slidesPerView: 6,
+                },
               }}
               navigation={true}
               modules={[Autoplay, Navigation]}
@@ -143,40 +163,6 @@ const Product = ({product}) => {
                     />
                   </SwiperSlide>
                 )
-              })}
-            </Swiper>
-          </div>
-          <div className="sm:hidden">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={0}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Navigation]}
-              // modules={[Pagination, Navigation]}
-              className="mySwiper"
-            >
-              {products?.map((product) => {
-                //       categories_ids: ["2"],
-                //       subcategories_ids: "101",
-                if (
-                  product?.categories_ids[0] ==
-                    cleanProduct?.categories_ids[0] ||
-                  product?.subcategories_ids == cleanProduct?.subcategories_ids
-                ) {
-                  return (
-                    <SwiperSlide key={product?.slug}>
-                      <ProductCard
-                        img={`images/allProducts/${product?.images[0]}`}
-                        title={product?.title}
-                        url={product?.slug}
-                      />
-                    </SwiperSlide>
-                  )
-                }
               })}
             </Swiper>
           </div>
@@ -216,6 +202,7 @@ const Product = ({product}) => {
           </Link>
         </div>
       </div>
+      <Faq />
     </div>
   )
 }

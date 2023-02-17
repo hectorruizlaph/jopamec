@@ -1,4 +1,6 @@
 import {useGlobalContext} from "../context/store"
+import Faq from "../components/faq"
+import WhyUs from "../components/whyUs"
 
 // import PhotoAlbum from "react-photo-album"
 import {
@@ -75,13 +77,14 @@ export default function Gallery() {
           plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
         />
       </div> */}
-      <div className="w-full flex justify-center xl:w-[1040px]">
+      <div className="w-full flex justify-center xl:w-[1040px] 3xl:w-[1548px]">
         <div
           className="flex justify-items-center items-center w-[350px] 
         sm:w-[400px] 
         md:w-[700px] 
         lg:w-[900px] 
-        xl:w-[1032px]"
+        xl:w-[1032px]
+        3xl:w-[1548px]"
         >
           <Swiper
             spaceBetween={0}
@@ -95,40 +98,14 @@ export default function Gallery() {
             className="mySwiper"
             slidesPerView={1}
             breakpoints={{
-              640: {
+              1150: {
                 slidesPerView: 2,
               },
-              // 1200: {
-              //   slidesPerView: 3,
-              // },
-              // 1680: {
-              //   slidesPerView: 4,
-              // },
-              // 1900: {
-              //   slidesPerView: 5,
-              // },
-              // 2450: {
-              //   slidesPerView: 6,
-              // },
+              1580: {
+                slidesPerView: 3,
+              },
             }}
           >
-            {/* 
-          <SwiperSlide>
-            <div className="p-4">
-              <Grid1 id1={0} id2={1} id3={2} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Grid2 id1={3} id2={4} id3={5} />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-items-center items-center">
-            <Grid3 id1={6} id2={7} id3={8} />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center gap-4">
-            <Grid4 id1={9} id2={10} id3={11} />
-          </SwiperSlide>
-        </Swiper> 
-        */}
             <SwiperSlide>
               <div className="m-4">
                 <Grid1 id1={idNum} id2={(idNum += 1)} id3={(idNum += 1)} />
@@ -326,6 +303,9 @@ export default function Gallery() {
         // enable optional lightbox plugins
         plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
       />
+      <WhyUs />
+
+      <Faq />
     </div>
   )
 }

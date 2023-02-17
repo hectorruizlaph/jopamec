@@ -1,10 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import {useGlobalContext} from "../../../context/store"
 
-function HorizontalCard({image, name, articles, link}) {
+function HorizontalCard({image, name, articles, id}) {
+  const {setCategoryContext} = useGlobalContext()
+
   return (
-    <Link href={`/productos/${link}`}>
+    <Link href="/productos" onClick={() => setCategoryContext(id)}>
       <div className="group w-[300px] h-[150px] sm:w-[500px] sm:h-[180px] bg-[#b6b9c2] rounded-[30px] hover:bg-opacity-90">
         <div className="ml-4 rounded-[30px]">
           <Image

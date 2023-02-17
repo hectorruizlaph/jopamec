@@ -7,6 +7,9 @@ module.exports = withMT({
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      "3xl": "1580px",
+    },
     colors: {
       background: "#fcfcfc",
       gold: "#C89210",
@@ -18,7 +21,7 @@ module.exports = withMT({
         custom: "0 50px 25px -24px rgb(0 0 0 / 0.3)",
       },
       fontFamily: {
-        manrope: ["Manrope", "sans-serif"],
+        jopamec: ["var(--font-jopamec)"],
       },
       animation: {
         rigthArrow: "rigthArrow 2s infinite;",
@@ -33,7 +36,4 @@ module.exports = withMT({
     },
   },
   plugins: [require("tailwind-scrollbar")({nocompatible: true})],
-  // variants: {
-  //   scrollbar: ["rounded"],
-  // },
 })

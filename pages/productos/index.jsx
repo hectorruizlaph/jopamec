@@ -3,6 +3,7 @@ import {data} from "../../data/data"
 import ProductCard from "../../components/products/product"
 import uuid from "react-uuid"
 import Faq from "../../components/faq"
+import {useGlobalContext} from "../../context/store"
 
 export const getStaticProps = async () => {
   return {
@@ -13,10 +14,26 @@ export const getStaticProps = async () => {
 }
 
 const Productos = ({data}) => {
+  const {categoryContext, setCategoryContext} = useGlobalContext()
+
   const [productsList, setProductsList] = useState(data?.products)
   const [input, setInput] = useState("")
 
   const categoryList = data?.categories
+
+  useEffect(() => {
+    if (categoryContext != "0") {
+      categoryList.map((category) => (category.active = false))
+      setProductsList(
+        data.products.filter(
+          (product) => product.categories_ids[0] === categoryContext
+        )
+      )
+      categoryList.map((category) =>
+        category.id === categoryContext ? (category.active = true) : null
+      )
+    }
+  }, [categoryContext, categoryList, data.products])
 
   const handleInputChange = (e) => {
     e.preventDefault()

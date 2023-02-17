@@ -1,51 +1,3 @@
-// const FaqSection = ({question, answer}) => {
-//   return (
-//     <div className="flex justify-between whitespace-nowrap px-5 py-5 border border-[#eeeeee] shadow-lg rounded-lg w-[80%]">
-//       <h1 className="text-2xl">{question}</h1>
-//       <span>
-//         <svg
-//           fill="#000000"
-//           width="32px"
-//           height="32px"
-//           viewBox="0 0 16.00 16.00"
-//           xmlns="http://www.w3.org/2000/svg"
-//           stroke="#000000"
-//           strokeWidth="0.00016"
-//         >
-//           <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
-//           <g
-//             id="SVGRepo_tracerCarrier"
-//             stroke-linecap="round"
-//             strokeLinejoin="round"
-//             stroke="#CCCCCC"
-//             strokeWidth="0.032"
-//           />
-
-//           <g id="SVGRepo_iconCarrier">
-//             <path d="M8 10.18 2.39 4.52l-.89.87 5.59 5.71a1.18 1.18 0 0 0 .86.39 1.13 1.13 0 0 0 .85-.39l5.7-5.7-.88-.89z" />
-//           </g>
-//         </svg>
-//       </span>
-//     </div>
-//   )
-// }
-
-// const Faq = () => {
-//   return (
-//     <div>
-//       <h1 className="text-center text-[32px] font-bold mb-[32px]">
-//         Preguntas Frecuentes
-//       </h1>
-//       <div className="flex flex-col gap-6 justify-center items-center">
-//         <FaqSection question="¿Cuanto tarda un pedido?" />
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Faq
-
 import {Fragment, useState} from "react"
 import {
   Accordion,
@@ -93,17 +45,15 @@ export default function Faq() {
                   : "shadow-lg mb-6"
               }`}
             >
-              ¿Cuanto tarda un pedido?
+              ¿Que tipo de placas conmemorativas realizan?
             </AccordionHeader>
             <AccordionBody
               className={`px-5 py-5 border border-[#eeeeee] border-t-0  rounded-b-lg text-xl ${
                 open === 1 ? "shadow-lg mb-6" : "shadow-lg"
               }`}
             >
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
+              Realizamos placas grabadas con punta de diamante, placas
+              fotograbadas, placas fundidas en bronce o aluminio.
             </AccordionBody>
           </Accordion>
           <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
@@ -115,17 +65,19 @@ export default function Faq() {
                   : "shadow-lg mb-6"
               }`}
             >
-              ¿Puedo hacer un pedido especial?
+              ¿Cuál es el tiempo de entrega de un pedido?
             </AccordionHeader>
             <AccordionBody
               className={`px-5 py-5 border border-[#eeeeee] border-t-0  rounded-b-lg text-xl ${
                 open === 2 ? "shadow-lg mb-6" : "shadow-lg"
               }`}
             >
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
+              Generalmente el tiempo de entrega varía entre 2 y 3 días hábiles,
+              una vez que el cliente haya autorizado el diseño previo. Sin
+              embargo para trabajos más grandes, se extenderá el tiempo
+              dependiendo del pedido. <br />
+              Contamos también con el servicio de trabajos urgentes, con un
+              cargo adicional.
             </AccordionBody>
           </Accordion>
           <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
@@ -137,44 +89,18 @@ export default function Faq() {
                   : "shadow-lg mb-6"
               }`}
             >
-              ¿Hay devoluciones?
+              ¿Hacen envíos nacionales o internacionales?
             </AccordionHeader>
             <AccordionBody
               className={`px-5 py-5 border border-[#eeeeee] border-t-0  rounded-b-lg text-xl ${
                 open === 3 ? "shadow-lg mb-6" : "shadow-lg"
               }`}
             >
-              Las entregas son finales por lo que tienes que pedir una muestra
-              digital de como se veria el producto final antes de crearlo.
-            </AccordionBody>
-          </Accordion>
-          <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
-            <AccordionHeader
-              onClick={() => handleOpen(4)}
-              className={`px-5 py-5 border border-[#eeeeee] rounded-lg text-start ${
-                open === 4
-                  ? "border-b border-b-[#eeeeee] rounded-b-none "
-                  : "shadow-lg mb-6"
-              }`}
-            >
-              ¿Donde estan localizados?
-            </AccordionHeader>
-            <AccordionBody
-              className={`px-5 py-5 border border-[#eeeeee] border-t-0  rounded-b-lg text-xl ${
-                open === 4 ? "shadow-lg mb-6" : "shadow-lg"
-              }`}
-            >
-              Deserunt mollit culpa ut magna est eiusmod reprehenderit. Proident
-              aliquip adipisicing ad dolore tempor fugiat excepteur ea officia.
-              Cillum fugiat velit duis non. Excepteur anim enim sunt incididunt
-              ea irure non Lorem deserunt mollit. Excepteur qui exercitation
-              tempor eu proident laborum Lorem deserunt veniam mollit.
-              Consectetur elit dolor dolore esse qui ad velit. Anim duis
-              cupidatat non commodo deserunt laboris. Ex amet pariatur
-              reprehenderit sunt adipisicing sunt nostrud nostrud. Consectetur
-              amet et nulla consequat. Occaecat ullamco nostrud velit deserunt
-              qui aliquip quis consequat quis quis proident cupidatat minim.
-              Mollit ad ullamco adipisicing occaecat consequat ad ullamco.
+              Si, realizamos envíos. <br />
+              Los pasos a seguir para realizar tu pedido son los mismos, con la
+              excepción que debe quedar liquidado antes de ser enviado. Contamos
+              con precios preferenciales en servicio de paquetería, que deberá
+              correr por cargo del cliente dependiendo del del destino.
             </AccordionBody>
           </Accordion>
         </Fragment>

@@ -1,6 +1,7 @@
 import React from "react"
 import {Form} from "../components/contactForm/Form"
 import useWindowSize from "../hooks/useWindowSize"
+import Faq from "../components/faq"
 
 const Contacto = () => {
   const windowSize = useWindowSize()
@@ -37,6 +38,7 @@ const Contacto = () => {
           className="rounded-lg shadow-lg "
         ></iframe>
       </div>
+      <Faq />
     </div>
   )
 }
