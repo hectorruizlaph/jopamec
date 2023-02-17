@@ -150,20 +150,8 @@ const CategoriesSlider = () => {
       <div className="flex flex-col sm:flex-row sm:gap-10 font-bold text-[24px] sm:text-[32px] pb-[30px] leading-8 sm:leading-4">
         <h1 className="">Explora nuestras categorias </h1>
       </div>
-      <div className="relative flex gap-7 overflow-x-auto overflow-y-hidden scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-lightBlue pb-5">
+      <div className="relative flex gap-7 overflow-x-auto overflow-y-hidden scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-[#B6B9C2] scrollbar-corner-orange-600 pb-5">
         <div className="flex flex-col gap-7 justify-between">
-          {/* {categories.map((card) => {
-            return (
-              <div key={card.id}>
-                <HorizontalCrad
-                  image={"images/categories/" + card.img}
-                  name={card.name}
-                  articles={card.articles}
-                  link={card.slug}
-                />
-              </div>
-            )
-          })} */}
           <HorizontalCrad
             image={"images/categories/" + categories[0].img}
             name={categories[0].name}
