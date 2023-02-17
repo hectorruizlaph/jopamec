@@ -72,21 +72,6 @@ function Navbar() {
                     onClick={() => setMenuMovilOpen(false)}
                   >
                     <Link
-                      href="/galeria"
-                      className={`font-bold text-left p-6 w-full ${
-                        currentRoute === "/galeria"
-                          ? "text-gold font-semibold"
-                          : ""
-                      }`}
-                    >
-                      Galería
-                    </Link>
-                  </li>
-                  <li
-                    className="w-full"
-                    onClick={() => setMenuMovilOpen(false)}
-                  >
-                    <Link
                       href="/nosotros"
                       className={`font-bold text-left p-6 w-full ${
                         currentRoute === "/nosotros"
@@ -110,6 +95,21 @@ function Navbar() {
                       }`}
                     >
                       Contacto
+                    </Link>
+                  </li>
+                  <li
+                    className="w-full"
+                    onClick={() => setMenuMovilOpen(false)}
+                  >
+                    <Link
+                      href="/galeria"
+                      className={`font-bold text-left p-6 w-full ${
+                        currentRoute === "/galeria"
+                          ? "text-gold font-semibold"
+                          : ""
+                      }`}
+                    >
+                      Galería
                     </Link>
                   </li>
                   <div
@@ -149,16 +149,6 @@ function Navbar() {
                   Productos
                 </Link>
               </li>
-              <li className="min-w-[50px]">
-                <Link
-                  href="/galeria"
-                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
-                    currentRoute === "/galeria" ? "text-gold font-semibold" : ""
-                  }`}
-                >
-                  Galería
-                </Link>
-              </li>
               <li>
                 <Link
                   href="/nosotros"
@@ -181,6 +171,16 @@ function Navbar() {
                   }`}
                 >
                   Contacto
+                </Link>
+              </li>
+              <li className="min-w-[50px]">
+                <Link
+                  href="/galeria"
+                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
+                    currentRoute === "/galeria" ? "text-gold font-semibold" : ""
+                  }`}
+                >
+                  Galería
                 </Link>
               </li>
             </ul>

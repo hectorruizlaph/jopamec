@@ -52,12 +52,6 @@ const Nosotros = () => {
       </div>
       {/* Cards */}
       <div className="flex flex-col justify-center items-center gap-12 xl:flex-row xl:gap-28">
-        <WhyUsCard
-          img="location.svg"
-          title="Ubicación"
-          description="Enrique C. Livas 314, Monterrey, NL"
-        />
-
         <div className="flex flex-col justify-center items-center gap-5 w-[270px]">
           <Image
             src="/images/whyUs/contact.svg"
@@ -73,14 +67,15 @@ const Nosotros = () => {
         </div>
 
         <WhyUsCard
+          img="location.svg"
+          title="Ubicación"
+          description="Enrique C. Livas 314, Monterrey, NL"
+        />
+
+        <WhyUsCard
           img="tools.svg"
           title="Tecnicas"
-          description="
-            Impresión en sublimación -
-            Punta de diamante -
-            Grabado láser -
-            Fundición
-            "
+          description="Impresión en sublimación - Punta de diamante - Grabado láser - Fundición"
         />
       </div>
       {/* 25 años */}
