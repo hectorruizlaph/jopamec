@@ -13,6 +13,9 @@ export const getStaticProps = async () => {
   }
 }
 
+// Index for filter input with error margin
+let correctIndex
+
 const Productos = ({data}) => {
   const {categoryContext, setCategoryContext} = useGlobalContext()
 
@@ -20,7 +23,7 @@ const Productos = ({data}) => {
   const [input, setInput] = useState("")
 
   const categoryList = data?.categories
-
+  // Context category for category clicked on home page
   useEffect(() => {
     if (categoryContext != "0") {
       categoryList.map((category) => (category.active = false))
@@ -34,6 +37,25 @@ const Productos = ({data}) => {
       )
     }
   }, [categoryContext, categoryList, data.products])
+
+  // Input filter for products
+  useEffect(() => {
+    if (input !== "") {
+      const res = data?.products?.filter((item, index) => {
+        if (item.title.toLowerCase().includes(input)) {
+          correctIndex = input.length
+          return item.title.toLowerCase().includes(input)
+        } else {
+          return item.title
+            .toLowerCase()
+            .includes(input.substring(0, correctIndex))
+        }
+      })
+      setProductsList(data?.products.filter((product) => product.title === res))
+    } else {
+      setProductsList(data?.products)
+    }
+  }, [input, productsList, data?.products])
 
   const handleInputChange = (e) => {
     e.preventDefault()
@@ -208,8 +230,23 @@ const Productos = ({data}) => {
           </div>
         </div>
         <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
-          {productsList.map((product) => {
-            if (product?.title?.toLowerCase().includes(input) || input === "")
+          {if (input !== "") {
+      const res = data?.products?.filter((item, index) => {
+        if (item.title.toLowerCase().includes(input)) {
+          correctIndex = input.length
+          return item.title.toLowerCase().includes(input)
+        } else {
+          return item.title
+            .toLowerCase()
+            .includes(input.substring(0, correctIndex))
+        }
+      })
+      setProductsList(data?.products.filter((product) => product.title === res))
+    } else {
+      setProductsList(data?.products)
+    }}
+          {/* {productsList.map((product) => {
+            if (product?.title?.toLowerCase().startsWith(input) || input === "")
               return (
                 <div key={uuid()}>
                   <ProductCard
@@ -219,7 +256,7 @@ const Productos = ({data}) => {
                   />
                 </div>
               )
-          })}
+          })} */}
         </div>
       </div>
       <Faq />

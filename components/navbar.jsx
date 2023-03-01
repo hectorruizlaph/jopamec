@@ -130,17 +130,14 @@ function Navbar() {
             ) : null}
           </div>
           <div
-            className="hidden w-full 
+            className="hidden w-full text-lg
           md:block sm:w-auto"
           >
-            <ul
-              className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg 
-            sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium sm:border-0"
-            >
+            <ul className="flex flex-row p-4 mt-4 space-x-8 text-lg font-medium text-gray-700">
               <li className="min-w-[50px]">
                 <Link
                   href="/productos"
-                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
+                  className={`block py-2 pl-3 pr-4 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
                     currentRoute === "/productos"
                       ? "text-gold font-semibold"
                       : ""
@@ -152,7 +149,7 @@ function Navbar() {
               <li>
                 <Link
                   href="/nosotros"
-                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
+                  className={`block py-2 pl-3 pr-4 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
                     currentRoute === "/nosotros"
                       ? "text-gold font-semibold"
                       : ""
@@ -164,7 +161,7 @@ function Navbar() {
               <li>
                 <Link
                   href="/contacto"
-                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
+                  className={`block py-2 pl-3 pr-4 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
                     currentRoute === "/contacto"
                       ? "text-gold font-semibold"
                       : ""
@@ -176,7 +173,7 @@ function Navbar() {
               <li className="min-w-[50px]">
                 <Link
                   href="/galeria"
-                  className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
+                  className={`block py-2 pl-3 pr-4 hover:text-[#c89210] active:text-[#c89210] hover:font-bold sm:p-0 text-center ${
                     currentRoute === "/galeria" ? "text-gold font-semibold" : ""
                   }`}
                 >
@@ -189,7 +186,7 @@ function Navbar() {
         <div>
           <Link href="/cotizar">
             <button
-              className="hidden bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-2xl
+              className="hidden bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl
             md:block"
             >
               Cotizar

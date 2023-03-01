@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from "../components/layout"
 
-import localFont from "@next/font/local"
+import localFont from "next/font/local"
 import Head from "next/head"
 
 const jopamec = localFont({
