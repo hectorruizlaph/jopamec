@@ -53,11 +53,11 @@ function Navbar() {
             </button>
             {isMenuMovilOpen ? (
               <div className="md:hidden overflow-hidden">
-                <ul className="fixed flex flex-col gap-8 h-full w-full left-0 top-14 bg-background z-20">
-                  <li className="pt-8 w-full">
+                <ul className="fixed flex flex-col font-bold justify-center gap-2 items-center h-full w-full left-0 top-14 bg-background z-20">
+                  <li className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg">
                     <Link
                       href="/productos"
-                      className={`font-bold text-left p-6 w-full ${
+                      className={`py-3 ${
                         currentRoute === "/productos"
                           ? "text-gold font-semibold"
                           : ""
@@ -68,12 +68,12 @@ function Navbar() {
                     </Link>
                   </li>
                   <li
-                    className="w-full"
+                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
                     onClick={() => setMenuMovilOpen(false)}
                   >
                     <Link
                       href="/nosotros"
-                      className={`font-bold text-left p-6 w-full ${
+                      className={`py-3 ${
                         currentRoute === "/nosotros"
                           ? "text-gold font-semibold"
                           : ""
@@ -83,12 +83,12 @@ function Navbar() {
                     </Link>
                   </li>
                   <li
-                    className="w-full"
+                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
                     onClick={() => setMenuMovilOpen(false)}
                   >
                     <Link
                       href="/contacto"
-                      className={`font-bold text-left p-6 w-full ${
+                      className={`py-3 ${
                         currentRoute === "/contacto"
                           ? "text-gold font-semibold"
                           : ""
@@ -98,12 +98,12 @@ function Navbar() {
                     </Link>
                   </li>
                   <li
-                    className="w-full"
+                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
                     onClick={() => setMenuMovilOpen(false)}
                   >
                     <Link
                       href="/galeria"
-                      className={`font-bold text-left p-6 w-full ${
+                      className={`py-3 ${
                         currentRoute === "/galeria"
                           ? "text-gold font-semibold"
                           : ""
@@ -118,9 +118,9 @@ function Navbar() {
                   >
                     <Link
                       href="/cotizar"
-                      className="font-bold text-left p-6 w-full"
+                      className="flex justify-center items-center"
                     >
-                      <button className="bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl">
+                      <button className="bg-gold w-[95%]  py-[12px] rounded-lg text-background">
                         Cotizar
                       </button>
                     </Link>
@@ -186,7 +186,7 @@ function Navbar() {
         <div>
           <Link href="/cotizar">
             <button
-              className="hidden bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl
+              className="hidden text-lg bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl
             md:block"
             >
               Cotizar
