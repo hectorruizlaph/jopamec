@@ -25,12 +25,26 @@ module.exports = withMT({
       },
       animation: {
         rigthArrow: "rigthArrow 2s infinite;",
+        openmenu: "openmenu 0.5s ease-in",
+        closemenu: "closemenu 0.5s ease-in",
       },
       keyframes: {
         rigthArrow: {
           "0%": {transform: "translateX(0px)"},
           "100%": {transform: "translateX(0px)"},
           "50%": {transform: "translateX(10px)"},
+        },
+        openmenu: {
+          // initial position
+          "0%": {left: "100%"},
+          // final position
+          "100%": {left: "0px"},
+        },
+        closemenu: {
+          // initial position
+          "0%": {left: "0px"},
+          // final position
+          "100%": {left: "100%"},
         },
       },
     },

@@ -4,6 +4,8 @@ import {useRouter} from "next/router"
 import Image from "next/image"
 import Link from "next/link"
 
+import {Sling as Hamburger} from "hamburger-react"
+
 function Navbar() {
   const [isMenuMovilOpen, setMenuMovilOpen] = useState(false)
 
@@ -14,6 +16,8 @@ function Navbar() {
   const handleNavbarClick = () => {
     setMenuMovilOpen(!isMenuMovilOpen)
   }
+
+  const genericHamburgerLine = `mx-auto h-[2px] w-[24px] my-1 rounded-full bg-gray-500 transition ease transform duration-300`
 
   return (
     <nav
@@ -30,104 +34,94 @@ function Navbar() {
           </Link>
         </div>
         <div>
-          <div className="">
-            <button
-              type="button"
-              className="absolute right-6 top-4 p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 z-50
-              md:hidden"
-              onClick={handleNavbarClick}
+          <div className="absolute mt-2 right-2 z-50 md:hidden">
+            <Hamburger
+              toggled={isMenuMovilOpen}
+              toggle={setMenuMovilOpen}
+              size={20}
+              rounded
+              duration={0.6}
+            />
+            {/* {isMenuMovilOpen ? ( */}
+            <div
+              className={
+                isMenuMovilOpen
+                  ? "fixed left-0 animate-openmenu h-full w-full bg-background z-20"
+                  : "fixed animate-closemenu left-[100vw] h-full w-full bg-background z-20"
+              }
             >
-              <svg
-                className="w-6 h-6"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            {isMenuMovilOpen ? (
-              <div className="md:hidden overflow-hidden">
-                <ul className="fixed flex flex-col font-bold justify-center gap-2 items-center h-full w-full left-0 top-14 bg-background z-20">
-                  <li className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg">
-                    <Link
-                      href="/productos"
-                      className={`py-3 ${
-                        currentRoute === "/productos"
-                          ? "text-gold font-semibold"
-                          : ""
-                      }`}
-                      onClick={() => setMenuMovilOpen(false)}
-                    >
-                      Productos
-                    </Link>
-                  </li>
-                  <li
-                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
+              <ul className="flex flex-col font-bold justify-center gap-2 items-center h-full w-full left-0 top-14">
+                <li className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg">
+                  <Link
+                    href="/productos"
+                    className={`py-3 ${
+                      currentRoute === "/productos"
+                        ? "text-gold font-semibold"
+                        : ""
+                    }`}
                     onClick={() => setMenuMovilOpen(false)}
                   >
-                    <Link
-                      href="/nosotros"
-                      className={`py-3 ${
-                        currentRoute === "/nosotros"
-                          ? "text-gold font-semibold"
-                          : ""
-                      }`}
-                    >
-                      Nosotros
-                    </Link>
-                  </li>
-                  <li
-                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
-                    onClick={() => setMenuMovilOpen(false)}
+                    Productos
+                  </Link>
+                </li>
+                <li
+                  className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
+                  onClick={() => setMenuMovilOpen(false)}
+                >
+                  <Link
+                    href="/nosotros"
+                    className={`py-3 ${
+                      currentRoute === "/nosotros"
+                        ? "text-gold font-semibold"
+                        : ""
+                    }`}
                   >
-                    <Link
-                      href="/contacto"
-                      className={`py-3 ${
-                        currentRoute === "/contacto"
-                          ? "text-gold font-semibold"
-                          : ""
-                      }`}
-                    >
-                      Contacto
-                    </Link>
-                  </li>
-                  <li
-                    className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
-                    onClick={() => setMenuMovilOpen(false)}
+                    Nosotros
+                  </Link>
+                </li>
+                <li
+                  className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
+                  onClick={() => setMenuMovilOpen(false)}
+                >
+                  <Link
+                    href="/contacto"
+                    className={`py-3 ${
+                      currentRoute === "/contacto"
+                        ? "text-gold font-semibold"
+                        : ""
+                    }`}
                   >
-                    <Link
-                      href="/galeria"
-                      className={`py-3 ${
-                        currentRoute === "/galeria"
-                          ? "text-gold font-semibold"
-                          : ""
-                      }`}
-                    >
-                      Galería
-                    </Link>
-                  </li>
-                  <div
-                    className="w-full"
-                    onClick={() => setMenuMovilOpen(false)}
+                    Contacto
+                  </Link>
+                </li>
+                <li
+                  className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg"
+                  onClick={() => setMenuMovilOpen(false)}
+                >
+                  <Link
+                    href="/galeria"
+                    className={`py-3 ${
+                      currentRoute === "/galeria"
+                        ? "text-gold font-semibold"
+                        : ""
+                    }`}
                   >
-                    <Link
-                      href="/cotizar"
-                      className="flex justify-center items-center"
-                    >
-                      <button className="bg-gold w-[95%]  py-[12px] rounded-lg text-background">
-                        Cotizar
-                      </button>
-                    </Link>
-                  </div>
-                </ul>
-              </div>
-            ) : null}
+                    Galería
+                  </Link>
+                </li>
+                <div className="w-full" onClick={() => setMenuMovilOpen(false)}>
+                  <Link
+                    href="/cotizar"
+                    className="flex justify-center items-center"
+                  >
+                    <button className="bg-gold w-[95%]  py-[12px] rounded-lg text-background">
+                      Cotizar
+                    </button>
+                  </Link>
+                </div>
+              </ul>
+            </div>
+            {/* ) : null} */}
           </div>
           <div
             className="hidden w-full text-lg
