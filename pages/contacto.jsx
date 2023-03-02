@@ -37,7 +37,7 @@ const Contacto = () => {
 
         <WhyUsCard
           img="tools.svg"
-          title="Tecnicas"
+          title="Técnicas"
           description="Impresión en sublimación - Punta de diamante - Grabado láser - Fundición"
         />
       </div>

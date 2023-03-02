@@ -1480,7 +1480,7 @@ export const data = {
       categories_ids: ["11"],
     },
     {
-      title: "Vaso azul tipo Yeti 30oz",
+      title: "Yeti azul 30oz",
       slug: "vaso-yeti-30oz-azul",
       folder: "vaso-tipo-yeti",
       images: ["AZUL-30-OZ.png"],
@@ -1489,7 +1489,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso azul marino tipo Yeti 30oz",
+      title: "Yeti azul marino 30oz",
       slug: "vaso-yeti-30oz-marino",
       folder: "vaso-tipo-yeti",
       images: ["AZUL-MARINO-30-OZ.png"],
@@ -1498,7 +1498,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso blanco tipo Yeti 30oz",
+      title: "Yeti blanco 30oz",
       slug: "vaso-yeti-30oz-blanco",
       folder: "vaso-tipo-yeti",
       images: ["BLANCO-30-OZ.png"],
@@ -1507,7 +1507,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso gris tipo Yeti 20oz",
+      title: "Yeti gris 20oz",
       slug: "vaso-yeti-20oz-gris",
       folder: "vaso-tipo-yeti",
       images: ["GRIS-20-OZ.png"],
@@ -1516,7 +1516,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso gris tipo Yeti 30oz",
+      title: "Yeti gris 30oz",
       slug: "vaso-yeti-30oz-gris",
       folder: "vaso-tipo-yeti",
       images: ["GRIS-30-OZ.png"],
@@ -1525,7 +1525,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso naranja tipo Yeti 20oz",
+      title: "Yeti naranja 20oz",
       slug: "vaso-yeti-20oz-naranja",
       folder: "vaso-tipo-yeti",
       images: ["NARANJA-20-OZ.png"],
@@ -1534,7 +1534,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso naranja tipo Yeti 30oz",
+      title: "Yeti naranja 30oz",
       slug: "vaso-yeti-30oz-naranja",
       folder: "vaso-tipo-yeti",
       images: ["NARANJA-30-OZ.png"],
@@ -1543,7 +1543,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso negro tipo Yeti 20oz",
+      title: "Yeti negro 20oz",
       slug: "vaso-yeti-20oz-negro",
       folder: "vaso-tipo-yeti",
       images: ["NEGRO-20-OZ.png"],
@@ -1552,7 +1552,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso negro tipo Yeti 30oz",
+      title: "Yeti negro 30oz",
       slug: "vaso-yeti-30oz-negro",
       folder: "vaso-tipo-yeti",
       images: ["NEGRO-30-OZ.png"],
@@ -1561,7 +1561,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso rojo tipo Yeti 20oz",
+      title: "Yeti rojo 20oz",
       slug: "vaso-yeti-20oz-rojo",
       folder: "vaso-tipo-yeti",
       images: ["ROJO-20-OZ.png"],
@@ -1570,7 +1570,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso rosa tipo Yeti 30oz",
+      title: "Yeti rosa 30oz",
       slug: "vaso-yeti-30oz-rosa",
       folder: "vaso-tipo-yeti",
       images: ["ROSA-30-OZ.png"],
@@ -1579,7 +1579,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso verde tipo Yeti 20oz",
+      title: "Yeti verde 20oz",
       slug: "vaso-yeti-20oz-verde",
       folder: "vaso-tipo-yeti",
       images: ["VERDE-20-OZ.png"],
@@ -1588,7 +1588,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso verde tipo Yeti 30oz",
+      title: "Yeti verde 30oz",
       slug: "vaso-yeti-30oz-verde",
       folder: "vaso-tipo-yeti",
       images: ["VERDE-30-OZ.png"],
@@ -1597,7 +1597,7 @@ export const data = {
       categories_ids: ["4"],
     },
     {
-      title: "Vaso vino tipo Yeti 30oz",
+      title: "Yeti vino 30oz",
       slug: "vaso-yeti-30oz-vino",
       folder: "vaso-tipo-yeti",
       images: ["VINO-30-OZ.png"],

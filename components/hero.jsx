@@ -2,6 +2,7 @@ import Image from "next/image"
 import React from "react"
 import BlobSlider from "../components/sliders/blobSlider"
 import TextSlider from "./textSlider"
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -44,12 +45,14 @@ const Hero = () => {
           className="flex justify-center items-center gap-7 text-background
         md:justify-start"
         >
-          <button className="bg-darkBlue px-[22px] py-[16px] rounded-xl shadow-md hover:shadow-xl">
+          {/* <button className="bg-darkBlue px-[22px] py-[16px] rounded-xl shadow-md hover:shadow-xl">
             Ver Productos
-          </button>
-          <button className="bg-gold px-[22px] py-[16px] rounded-xl shadow-md hover:shadow-xl">
-            Solicitar Ahora
-          </button>
+          </button> */}
+          <Link href="/productos">
+            <button className="bg-gold px-[22px] py-[16px] rounded-xl shadow-md hover:shadow-xl">
+              Ver Productos
+            </button>
+          </Link>
         </div>
       </div>
       <div className="xl:mt-[125px] pt-7 hidden xl:block">

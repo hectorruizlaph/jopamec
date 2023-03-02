@@ -1,11 +1,23 @@
 import Navbar from './navbar'
 import Footer from './footer'
 import { GlobalContextProvider } from '../context/store'
+import { useEffect } from "react";
 interface LayoutProps {
     children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+
+    useEffect(() => {
+        const handleContextMenu = (e: any) => {
+            e.preventDefault()
+        }
+        document.addEventListener("contextmenu", handleContextMenu)
+        return () => {
+            document.removeEventListener("contextmenu", handleContextMenu)
+        }
+    }, [])
+
     return (
         <div className="bg-[#FCFCFC] font-jopamec text-base
         sm:px-2 sm:pt-[40px] 

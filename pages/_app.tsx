@@ -10,6 +10,7 @@ const jopamec = localFont({
   variable: '--font-jopamec',
 })
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${jopamec.variable} font-sans`}>
