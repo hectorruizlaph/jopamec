@@ -39,7 +39,7 @@ export default function Faq() {
           <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
             <AccordionHeader
               onClick={() => handleOpen(1)}
-              className={`px-5 py-5 border border-[#eeeeee] rounded-lg  ${
+              className={`px-5 py-5 border border-[#eeeeee] rounded-lg text-start  ${
                 open === 1
                   ? "border-b border-b-[#eeeeee] rounded-b-none "
                   : "shadow-lg mb-6"
