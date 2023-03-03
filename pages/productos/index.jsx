@@ -187,7 +187,7 @@ const Productos = ({data}) => {
           {/* Mobil categories and subcategories */}
           <div className="md:hidden">
             <div>
-              <h1 className="text-sm">Categorias</h1>
+              <p className="text-sm">Categorias</p>
               <div className="flex py-2 overflow-x-auto scrollbar-none mb-2">
                 {categoryList.map((category) => {
                   return (
@@ -212,7 +212,7 @@ const Productos = ({data}) => {
               {categoryList.map((category) =>
                 category.active && category.subcategories ? (
                   <div key={uuid()}>
-                    <h1 className="text-sm">Subcategorias</h1>
+                    <p className="text-sm">Subcategorias</p>
                     <div className="flex py-2 overflow-x-auto scrollbar-none">
                       {category.subcategories.map((subcategory) => (
                         <div
