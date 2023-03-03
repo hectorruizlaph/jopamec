@@ -8,6 +8,8 @@ import "swiper/css"
 import {Autoplay, Navigation} from "swiper"
 import Faq from "../../components/faq"
 
+import {useGlobalContext} from "../../context/store"
+
 const products = data?.products
 
 export const getStaticPaths = async () => {
@@ -29,6 +31,8 @@ export const getStaticProps = async (context) => {
 }
 
 const Product = ({product}) => {
+  const {setContactText} = useGlobalContext()
+
   const cleanProduct = product[0]
   return (
     <div className="flex flex-col gap-14 sm:gap-20 my-28 sm:py-0 ">
@@ -87,9 +91,14 @@ const Product = ({product}) => {
               </p>
             </div>
             <div className="flex">
-              <button className="px-[18px] h-[40px] rounded-lg bg-gold text-background text-lg shadow-lg hover:shadow-xl">
-                Cotizar ahora
-              </button>
+              <Link href="/contacto">
+                <button
+                  className="px-[18px] h-[40px] rounded-lg bg-gold text-background text-lg shadow-lg hover:shadow-xl"
+                  onClick={() => setContactText(cleanProduct.title)}
+                >
+                  Cotizar ahora
+                </button>
+              </Link>
               <a
                 href={`https://wa.me/528123789941?text=Me+podrían+dar+más+información+sobre+el+producto:+${cleanProduct.title},+ https://placasjopamec.com/productos/${cleanProduct.slug}`}
                 rel="noreferrer"

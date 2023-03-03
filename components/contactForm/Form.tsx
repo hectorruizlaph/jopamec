@@ -4,17 +4,30 @@ import { RiLoader5Fill } from "react-icons/ri";
 import { validate } from "../../utils/mailValidate";
 import Input from "./Input";
 import TextArea from "./TextArea";
+import { useGlobalContext } from "../../context/store";
+
 interface IValues {
     name: string;
     email: string;
-    message: string;
+    message: any;
 }
 interface IErrors extends Partial<IValues> { }
+
+interface IContactText {
+    contactText?: any;
+}
+
+// interface IText {
+//     text?: string | null | undefined
+// }
 export const Form = () => {
+    const { contactText }: IContactText = useGlobalContext()
+
     const [values, setValues] = useState({
         name: "",
         email: "",
-        message: "",
+        message: `${contactText ? `Me interesa saber más sobre el siguiente producto: ${contactText}` : ""
+            }`,
     });
     const [errors, setErrors] = useState<IErrors>({});
     const [loading, setLoading] = useState(false);
@@ -47,7 +60,9 @@ export const Form = () => {
             })
             .catch((err) => {
                 setLoading(false);
-                setMessageState(String(err.message));
+                // setMessageState(String(err.message));
+                console.log(err.message)
+                setMessageState("Contáctanos por WhatsApp");
             });
         setLoading(false);
     };
@@ -56,6 +71,12 @@ export const Form = () => {
             | React.ChangeEvent<HTMLInputElement>
             | React.ChangeEvent<HTMLTextAreaElement>
     ) => {
+        if (contactText) {
+            setValues((prevInput) => ({
+                ...prevInput,
+                [e.target.name]: e.target.value,
+            }));
+        }
         setValues((prevInput) => ({
             ...prevInput,
             [e.target.name]: e.target.value,
@@ -79,7 +100,7 @@ export const Form = () => {
                 id="email"
                 name="email"
                 label="Email"
-                placeholder="hola@correo.com"
+                placeholder="nombre@email.com"
                 error={!!errors.email}
                 errorMessage={!!errors.email ? errors.email : ""}
             />
@@ -89,7 +110,7 @@ export const Form = () => {
                 id="message"
                 name="message"
                 label="Mensaje"
-                placeholder="mensaje"
+                placeholder={"mensaje"}
                 error={!!errors.message}
                 errorMessage={!!errors.message ? errors.message : ""}
             />
@@ -107,14 +128,22 @@ export const Form = () => {
                         </div>
                     )}
                 </button>
-                <div className="flex flex-col justify-center ml-6">
+                {/* <div className="flex flex-col justify-center ml-6 rounded-md px-5 hover:bg-gray-200 "> */}
+                <a
+                    href={contactText ? `https://wa.me/528123789941?text=Me+podrían+dar+más+información+sobre+el+siguinete+producto+${contactText}` : "https://wa.me/528123789941?text=Hola,+me+interesa..."}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="flex flex-col justify-center ml-6 rounded-md px-5 hover:bg-gray-200 "
+                >
                     <p>O contáctanos por WhatsApp</p>
-                </div>
-                <p className="mt-5 text-green-500">
+                </a>
+
+                {/* </div> */}
+                <p className="flex flex-col justify-center ml-6">
                     {success !== false ? (
                         messageState
                     ) : (
-                        <span className="text-red-500">{messageState}</span>
+                        <span className="">{messageState}</span>
                     )}
                 </p>
             </div>

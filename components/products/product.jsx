@@ -21,7 +21,7 @@ const ProductCard = ({img, title, url}) => {
             className="max-h-[380px]"
           />
         </div>
-        <p className="py-2 max-w-[90%] text-center text-lg font-semibold tracking-wide">
+        <p className="text-[#777] py-2 max-w-[90%] text-center text-lg">
           {title}
         </p>
       </div>

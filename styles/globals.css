@@ -5,12 +5,26 @@
 /* #141B39  darkblue*/
 /* #c89210  gold*/
 
-/* @layer base {
+@layer base {
   @font-face {
-    font-family: "jopamec", "sans-serif";
-    src: url("/fonts/jopamec.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
+    font-family: "Ubuntu";
+    src: url("../public/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype");
   }
-} */
+  @font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-ubuntu;
+  }
+
+  p {
+    @apply font-roboto;
+  }
+}

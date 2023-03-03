@@ -477,7 +477,7 @@ export const data = {
       categories_ids: ["10"],
     },
     {
-      title: "Llavero personalizado de bambú",
+      title: "Llavero de bambú",
       slug: "llavero-bambu-02",
       folder: "llaveros/tradicionales",
       images: ["LLAVERO-DE-BAMBU61.png"],
@@ -486,7 +486,7 @@ export const data = {
       subcategories_ids: "105",
     },
     {
-      title: "Llavero niquelado personalizado",
+      title: "Llavero niquelado",
       slug: "llavero-niquel-01",
       folder: "llaveros/tradicionales",
       images: ["LLAVEROS-NIQUELADOS66.png"],

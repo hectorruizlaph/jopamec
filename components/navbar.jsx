@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 z-50 w-full bg-background
+      className=" font-roboto fixed top-0 z-50 w-full bg-background
     sm:relative"
     >
       <div

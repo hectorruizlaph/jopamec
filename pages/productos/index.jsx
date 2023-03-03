@@ -4,6 +4,8 @@ import ProductCard from "../../components/products/product"
 import uuid from "react-uuid"
 import Faq from "../../components/faq"
 import {useGlobalContext} from "../../context/store"
+import Image from "next/image"
+import {Tooltip} from "@material-tailwind/react"
 
 export const getStaticProps = async () => {
   return {
@@ -14,13 +16,14 @@ export const getStaticProps = async () => {
 }
 
 // Index for filter input with error margin
-let correctIndex
+// let correctIndex
 
 const Productos = ({data}) => {
-  const {categoryContext, setCategoryContext} = useGlobalContext()
+  const {categoryContext} = useGlobalContext()
 
   const [productsList, setProductsList] = useState(data?.products)
   const [input, setInput] = useState("")
+  const [listItems, setListItems] = useState(8)
 
   const categoryList = data?.categories
   // Context category for category clicked on home page
@@ -123,7 +126,7 @@ const Productos = ({data}) => {
               onChange={handleInputChange}
               value={input}
               placeholder="Busca tu producto..."
-              className="py-2 w-full bg-background rounded-lg px-4 shadow-md "
+              className="py-2 w-full bg-background rounded-lg px-4 shadow-md focus:outline-0"
             />
             <span className="absolute  sm:relative sm:right-9 sm:-mr-7 flex justify-center items-center right-6 md:mt-0 mt-[6px] text-darkBlue">
               <svg
@@ -229,34 +232,48 @@ const Productos = ({data}) => {
             </div>
           </div>
         </div>
-        <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
-          {/* {if (input !== "") {
-      const res = data?.products?.filter((item, index) => {
-        if (item.title.toLowerCase().includes(input)) {
-          correctIndex = input.length
-          return item.title.toLowerCase().includes(input)
-        } else {
-          return item.title
-            .toLowerCase()
-            .includes(input.substring(0, correctIndex))
-        }
-      })
-      setProductsList(data?.products.filter((product) => product.title === res))
-    } else {
-      setProductsList(data?.products)
-    }} */}
-          {productsList.map((product) => {
-            if (product?.title?.toLowerCase().includes(input) || input === "")
-              return (
-                <div key={uuid()}>
-                  <ProductCard
-                    img={`images/allProducts/${product?.images[0]}`}
-                    title={product?.title}
-                    url={product?.slug}
+        <div>
+          <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
+            {productsList.slice(0, listItems).map((product) => {
+              if (product?.title?.toLowerCase().includes(input) || input === "")
+                return (
+                  <div key={uuid()}>
+                    <ProductCard
+                      img={`images/allProducts/${product?.images[0]}`}
+                      title={product?.title}
+                      url={product?.slug}
+                    />
+                  </div>
+                )
+            })}
+          </div>
+          {productsList.length > 8 ? (
+            <div className="flex flex-col justify-center items-center">
+              <Tooltip
+                content="Ver más"
+                placement="bottom"
+                // animate={{
+                //   mount: {scale: 1, y: 0},
+                //   unmount: {scale: 0, y: 25},
+                // }}
+                className="bg-transparent text-gray-900"
+              >
+                <div
+                  className="mt-4 cursor-pointer animate-bounce flex justify-center items-center rounded-full shadow-lg p-4"
+                  onClick={() => setListItems(listItems + 8)}
+                >
+                  <Image
+                    src="/icons/chevron-down.svg"
+                    width={24}
+                    height={24}
+                    type="svg"
+                    className=""
+                    alt="chevron-down"
                   />
                 </div>
-              )
-          })}
+              </Tooltip>
+            </div>
+          ) : null}
         </div>
       </div>
       <Faq />
