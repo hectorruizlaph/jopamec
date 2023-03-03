@@ -13,7 +13,8 @@ interface IValues {
 }
 interface IErrors extends Partial<IValues> { }
 
-interface IContactText {
+interface IContextFormText {
+    contactProductText?: any;
     contactText?: any;
 }
 
@@ -21,13 +22,12 @@ interface IContactText {
 //     text?: string | null | undefined
 // }
 export const Form = () => {
-    const { contactText }: IContactText = useGlobalContext()
+    const { contactText, contactProductText }: IContextFormText = useGlobalContext()
 
     const [values, setValues] = useState({
         name: "",
         email: "",
-        message: `${contactText ? `Me interesa saber más sobre el siguiente producto: ${contactText}` : ""
-            }`,
+        message: `${contactProductText !== "" ? `Me interesa saber más sobre el siguiente producto: ${contactProductText}` : contactText !== "" ? `${contactText}` : ""}`,
     });
     const [errors, setErrors] = useState<IErrors>({});
     const [loading, setLoading] = useState(false);
@@ -71,12 +71,6 @@ export const Form = () => {
             | React.ChangeEvent<HTMLInputElement>
             | React.ChangeEvent<HTMLTextAreaElement>
     ) => {
-        if (contactText) {
-            setValues((prevInput) => ({
-                ...prevInput,
-                [e.target.name]: e.target.value,
-            }));
-        }
         setValues((prevInput) => ({
             ...prevInput,
             [e.target.name]: e.target.value,
@@ -130,7 +124,7 @@ export const Form = () => {
                 </button>
                 {/* <div className="flex flex-col justify-center ml-6 rounded-md px-5 hover:bg-gray-200 "> */}
                 <a
-                    href={contactText ? `https://wa.me/528123789941?text=Me+podrían+dar+más+información+sobre+el+siguinete+producto+${contactText}` : "https://wa.me/528123789941?text=Hola,+me+interesa..."}
+                    href={contactProductText !== "" ? `https://wa.me/528123789941?text=Me+podrían+dar+más+información+sobre+el+siguinete+producto+${contactProductText}` : contactText !== "" ? `https://wa.me/528123789941?text=Me+urge+tener+un+pedido+en+menos+de+24+horas` : "https://wa.me/528123789941?text=Hola,+me+interesa..."}
                     rel="noreferrer"
                     target="_blank"
                     className="flex flex-col justify-center ml-6 rounded-md px-5 hover:bg-gray-200 "

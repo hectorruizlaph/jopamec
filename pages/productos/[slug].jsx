@@ -31,7 +31,13 @@ export const getStaticProps = async (context) => {
 }
 
 const Product = ({product}) => {
-  const {setContactText} = useGlobalContext()
+  const {setContactProductText, setContactText} = useGlobalContext()
+
+  // update satate in contact form
+  const handleClick = (product) => {
+    setContactProductText(product)
+    setContactText("")
+  }
 
   const cleanProduct = product[0]
   return (
@@ -94,9 +100,9 @@ const Product = ({product}) => {
               <Link href="/contacto">
                 <button
                   className="px-[18px] h-[40px] rounded-lg bg-gold text-background text-lg shadow-lg hover:shadow-xl"
-                  onClick={() => setContactText(cleanProduct.title)}
+                  onClick={() => handleClick(cleanProduct.title)}
                 >
-                  Cotizar ahora
+                  Hacer pedido
                 </button>
               </Link>
               <a

@@ -8,6 +8,7 @@ export const GlobalContextProvider = ({children}) => {
   const [sliderImageindex, setSliderImageindex] = useState(-1)
   const [categoryContext, setCategoryContext] = useState("0")
   const [contactText, setContactText] = useState("")
+  const [contactProductText, setContactProductText] = useState("")
 
   return (
     <GlobalContext.Provider
@@ -18,6 +19,8 @@ export const GlobalContextProvider = ({children}) => {
         setCategoryContext,
         contactText,
         setContactText,
+        contactProductText,
+        setContactProductText,
       }}
     >
       {children}

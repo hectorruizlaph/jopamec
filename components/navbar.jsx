@@ -12,13 +12,9 @@ function Navbar() {
   const router = useRouter()
   const currentRoute = router.pathname
 
-  //Navbar movil toggle
-  const handleNavbarClick = () => {
-    setMenuMovilOpen(!isMenuMovilOpen)
+  const handleClick = () => {
+    setMenuMovilOpen(false)
   }
-
-  const genericHamburgerLine = `mx-auto h-[2px] w-[24px] my-1 rounded-full bg-gray-500 transition ease transform duration-300`
-
   return (
     <nav
       className=" font-roboto fixed top-0 z-50 w-full bg-background
@@ -42,7 +38,6 @@ function Navbar() {
               rounded
               duration={0.6}
             />
-            {/* {isMenuMovilOpen ? ( */}
             <div
               className={
                 isMenuMovilOpen
@@ -54,7 +49,7 @@ function Navbar() {
                 <li className="flex justify-center items-center w-[95%] border-2 border-gray-100 rounded-lg">
                   <Link
                     href="/productos"
-                    className={`py-3 ${
+                    className={`py-3 w-full text-center ${
                       currentRoute === "/productos"
                         ? "text-gold font-semibold"
                         : ""
@@ -70,7 +65,7 @@ function Navbar() {
                 >
                   <Link
                     href="/nosotros"
-                    className={`py-3 ${
+                    className={`py-3 w-full text-center ${
                       currentRoute === "/nosotros"
                         ? "text-gold font-semibold"
                         : ""
@@ -85,7 +80,7 @@ function Navbar() {
                 >
                   <Link
                     href="/contacto"
-                    className={`py-3 ${
+                    className={`py-3 w-full text-center ${
                       currentRoute === "/contacto"
                         ? "text-gold font-semibold"
                         : ""
@@ -100,7 +95,7 @@ function Navbar() {
                 >
                   <Link
                     href="/galeria"
-                    className={`py-3 ${
+                    className={`py-3 w-full text-center ${
                       currentRoute === "/galeria"
                         ? "text-gold font-semibold"
                         : ""
@@ -109,19 +104,15 @@ function Navbar() {
                     Galería
                   </Link>
                 </li>
-                <div className="w-full" onClick={() => setMenuMovilOpen(false)}>
-                  <Link
-                    href="/cotizar"
-                    className="flex justify-center items-center"
-                  >
+                <Link href="/contacto" className="w-full" onClick={handleClick}>
+                  <div className="flex justify-center items-center">
                     <button className="bg-gold w-[95%]  py-[12px] rounded-lg text-background">
-                      Cotizar
+                      Hacer pedido
                     </button>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </ul>
             </div>
-            {/* ) : null} */}
           </div>
           <div
             className="hidden w-full text-lg
@@ -178,12 +169,12 @@ function Navbar() {
           </div>
         </div>
         <div>
-          <Link href="/cotizar">
+          <Link href="/contacto">
             <button
               className="hidden text-lg bg-gold px-[18px] py-[12px] rounded-lg text-background shadow-lg hover:shadow-xl
             md:block"
             >
-              Cotizar
+              Hacer pedido
             </button>
           </Link>
         </div>

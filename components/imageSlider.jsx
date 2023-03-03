@@ -1,6 +1,6 @@
 import {Swiper, SwiperSlide} from "swiper/react"
 import SwiperCore, {Autoplay} from "swiper"
-import "swiper/css"
+
 import Image from "next/image"
 
 import {sliderData} from "../utils/heroSlider"
@@ -48,6 +48,7 @@ const Slide = ({slideImage}) => {
 }
 
 const Slider = () => {
+  // SwiperOptions,Controller,FreeMode,Manipulation, Navigation, Pagination
   SwiperCore.use([Autoplay])
   return (
     <div
@@ -60,12 +61,14 @@ const Slider = () => {
         loop={true}
         autoplay={{
           delay: 4000,
+          disableOnInteraction: false,
         }}
+        cssMode={true}
       >
         {sliderData.map((image) => {
           return (
             <SwiperSlide key={image.id}>
-              {<Slide slideImage={image.img} />}
+              <Slide slideImage={image.img} />
             </SwiperSlide>
           )
         })}

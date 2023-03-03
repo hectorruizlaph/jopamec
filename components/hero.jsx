@@ -3,8 +3,16 @@ import React from "react"
 import BlobSlider from "../components/sliders/blobSlider"
 import TextSlider from "./textSlider"
 import Link from "next/link"
+import {useGlobalContext} from "../context/store"
 
 const Hero = () => {
+  const {setContactText, setContactProductText} = useGlobalContext()
+
+  const handleClick = () => {
+    setContactProductText("")
+    setContactText("Me urge tener un pedido en menos de 24 horas")
+  }
+
   return (
     <div>
       <div
@@ -71,22 +79,24 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="flex">
-          <div className=" flex justify-center items-center text-center rounded-md bg-[#EEE] py-2 px-4 cursor-pointer text-xl border border-gray-500 shadow-md hover:shadow-lg">
-            <p>Realizar pedido urgente</p>
-            <Image
-              src="/images/whyUs/24.svg"
-              width={34}
-              height={34}
-              alt="icon"
-              className="ml-2"
-            />
+        <Link href="/contacto" onClick={handleClick}>
+          <div className="flex">
+            <div className=" flex justify-center items-center text-center rounded-md py-2 px-4 cursor-pointer text-xl border border-gray-500 shadow-md hover:shadow-lg">
+              <p>Realizar pedido urgente</p>
+              <Image
+                src="/images/whyUs/24.svg"
+                width={34}
+                height={34}
+                alt="icon"
+                className="ml-2"
+              />
+            </div>
+            <span class="-ml-2 -mt-1 relative flex h-3 w-3 z-50">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 z-50"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-gold z-50"></span>
+            </span>
           </div>
-          <span class="-ml-2 -mt-1 relative flex h-3 w-3 z-50">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 z-50"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-gold z-50"></span>
-          </span>
-        </div>
+        </Link>
       </div>
     </div>
   )
