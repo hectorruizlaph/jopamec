@@ -66,6 +66,7 @@ const Productos = ({data}) => {
   }
 
   const handleCategoryClick = (categoryObj) => {
+    setListItems(8)
     categoryList.map((category) => (category.active = false))
     setInput("")
     categoryList.map((category) =>
@@ -88,6 +89,7 @@ const Productos = ({data}) => {
   }
 
   const handleSubcategoryClick = (subcategoryObj) => {
+    setListItems(8)
     categoryList.map((category) =>
       category?.subcategories
         ? category?.subcategories?.map((subcategory) => {
@@ -232,8 +234,11 @@ const Productos = ({data}) => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="md:flex md:flex-wrap md:gap-5 md:mt-5 md:ml-10">
+        <div className="flex flex-col justify-center items-center">
+          <div
+            className="flex flex-wrap w-full justify-center items-center 
+          lg:justify-start lg:items-start md:gap-5 md:mt-5 md:ml-10"
+          >
             {productsList.slice(0, listItems).map((product) => {
               if (product?.title?.toLowerCase().includes(input) || input === "")
                 return (

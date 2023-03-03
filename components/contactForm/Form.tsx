@@ -133,7 +133,7 @@ export const Form = () => {
                 </a>
 
                 {/* </div> */}
-                <p className="flex flex-col justify-center ml-6">
+                <p className="hidden sm:flex flex-col justify-center ml-6">
                     {success !== false ? (
                         messageState
                     ) : (
@@ -141,6 +141,14 @@ export const Form = () => {
                     )}
                 </p>
             </div>
+            <p className="text-center mt-2
+            sm:hidden">
+                {success !== false ? (
+                    messageState
+                ) : (
+                    <span className="">{messageState}</span>
+                )}
+            </p>
         </form>
     );
 };
