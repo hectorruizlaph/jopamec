@@ -64,6 +64,7 @@ const Slider = () => {
           disableOnInteraction: false,
         }}
         cssMode={true}
+        className="overflow-hidden"
       >
         {sliderData.map((image) => {
           return (

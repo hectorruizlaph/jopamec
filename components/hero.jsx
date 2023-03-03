@@ -29,11 +29,12 @@ const Hero = () => {
           >
             <h1
               className="font-bold leading-[60px] text-darkBlue text-[42px]
+              tracking-normal
           sm:leading-[70px] sm:text-[54px]"
             >
               25 años creando
             </h1>
-            <h1 className="text-lightBlue font-bold leading-[42px] text-[42px] sm:text-[54px] sm:leading-[70px]">
+            <h1 className="text-lightBlue font-bold leading-[42px] tracking-normal text-[42px] sm:text-[54px] sm:leading-[70px]">
               <TextSlider />
             </h1>
           </div>

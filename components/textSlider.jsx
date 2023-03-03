@@ -17,6 +17,7 @@ const textSlider = () => {
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: false,
         }}
         cssMode={true}
       >
