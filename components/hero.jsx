@@ -28,7 +28,7 @@ const Hero = () => {
         sm:pb-8 sm:text-start sm:max-w-full"
           >
             <h1
-              className="font-bold leading-relaxed text-darkBlue text-[42px]
+              className="font-bold leading-[60px] text-darkBlue text-[42px]
           sm:leading-[70px] sm:text-[54px]"
             >
               25 años creando
@@ -37,16 +37,6 @@ const Hero = () => {
               <TextSlider />
             </h1>
           </div>
-
-          {/* <div
-          className="flex flex-col text-center pb-8 max-w-[300px]
-        sm:text-start"
-        >
-          <p className="font-bold">
-            Entregas de trabajos urgentes en menos de 24 horas
-          </p>
-          <p className="text-sm">*Aplican restricciones</p>
-        </div> */}
           <div
             className="flex flex-col text-center pb-8 max-w-[300px]
         sm:text-start"
@@ -78,7 +68,10 @@ const Hero = () => {
           <BlobSlider />
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div
+        className="flex justify-center items-center mt-8
+      sm:mt-0"
+      >
         <Link href="/contacto" onClick={handleClick}>
           <div className="flex">
             <div className=" flex justify-center items-center text-center rounded-md py-2 px-4 cursor-pointer text-xl border border-gray-500 shadow-md hover:shadow-lg">
